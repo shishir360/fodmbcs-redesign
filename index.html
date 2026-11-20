@@ -493,11 +493,43 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 .hlabel{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);text-align:center;pointer-events:none;width:100%}
 .hlabel small{display:block;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);font-weight:700}
 .hlabel b{font:500 26px/1.15 var(--serif);color:#fff}
-.hvis .seal{right:auto;left:-10px;top:30px;bottom:auto;width:118px;height:118px;z-index:4}.hvis .seal b{font-size:28px}.hvis .seal small{bottom:30px}
+.hvis .seal{right:-10px;left:auto;top:0;bottom:auto;width:118px;height:118px;z-index:4}.hvis .seal b{font-size:28px}.hvis .seal small{bottom:30px}
 @media(max-width:980px){.hvis{height:500px}}
 @media(max-width:560px){.hvis{height:400px}.hlabel{padding:0 60px}.hlabel b{font-size:19px}.hvis .seal{width:92px;height:92px;left:auto;right:0;top:10px}.hvis .seal b{font-size:22px}.hvis .seal small{bottom:22px}}
 .rb .b3 .rib{display:none}
 .lib-st>.wrap{justify-self:center;width:min(1240px,calc(100% - 40px))}
+
+/* ===== hero single book ===== */
+.bscene{position:relative;width:100%;height:100%;perspective:1800px;perspective-origin:50% 35%;display:grid;place-items:center}
+.bwrap{transform-style:preserve-3d;transform:translateY(var(--fy,0px)) rotateX(var(--bx,8deg)) rotateY(var(--by,-24deg)) rotateZ(var(--bz,0deg));animation:bookIn 1.8s cubic-bezier(.16,1,.3,1) .4s both}
+@keyframes bookIn{from{opacity:0;transform:translateY(120px) rotateX(40deg) rotateY(-120deg) scale(.7)}}
+.hbk-link{display:block;transform-style:preserve-3d}
+.hbk .cov{position:absolute;inset:0;transform-origin:0 50%;transform:translateZ(calc(var(--D) / 2)) rotateY(var(--open,0deg));transform-style:preserve-3d}
+.hbk .cov .out,.hbk .cov .in{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;border-radius:2px 8px 8px 2px}
+.hbk .cov .out{box-shadow:inset 3px 0 8px rgba(0,0,0,.4)}
+.hbk .cov .out svg{width:100%;height:100%;display:block}
+.hbk .cov .in{transform:rotateY(180deg);border-radius:8px 2px 2px 8px;background:radial-gradient(circle at 50% 50%,rgba(201,162,74,.18) 1.5px,transparent 2px) 0 0/18px 18px,linear-gradient(135deg,#efe3c6,#e2d2ad)}
+.hbk .cov .in:before{content:"";position:absolute;inset:14px;border:1px solid rgba(160,120,40,.45)}
+.hbk .cov .out .sh{opacity:var(--sf,0)}.hbk .cov .in .sh{opacity:var(--si,.2)}
+.hbk .leaf{position:absolute;top:4px;bottom:4px;left:0;right:4px;transform-origin:0 50%;transform:translateZ(calc(var(--D) / 2 - 2px)) rotateY(calc(var(--open,0deg) * var(--k)));background:linear-gradient(90deg,#e9dfc8,#fbf7ec 8%,#fffdf6);border-radius:0 6px 6px 0;box-shadow:inset 8px 0 14px -10px rgba(90,60,20,.4);backface-visibility:visible}
+.hbk .tpage{position:absolute;top:4px;bottom:4px;left:0;right:4px;transform:translateZ(calc(var(--D) / 2 - 3px));background:linear-gradient(90deg,#e7dcc3,#fbf7ec 6%,#fffdf6);border-radius:0 6px 6px 0;box-shadow:inset 10px 0 16px -10px rgba(90,60,20,.45);display:grid;place-items:center;text-align:center;padding:30px 26px}
+.tp-in{display:flex;flex-direction:column;align-items:center;gap:10px}
+.tp-in img{width:150px;mix-blend-mode:multiply}
+.tp-in i{width:60px;height:1px;background:#B98F37}
+.tp-in small{font:700 9px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:#9a7428}
+.tp-in b{font:600 24px/1.1 var(--serif);color:var(--ink)}
+.tp-in em{font:italic 500 13px/1.3 var(--serif);color:#5b6275}
+.tp-in span{font:italic 600 15px var(--serif);color:#9a7428}
+.bshadow{position:absolute;left:50%;top:50%;width:420px;height:110px;transform:translate(-50%,240px);background:radial-gradient(ellipse,rgba(0,0,0,.6),transparent 68%);filter:blur(8px);opacity:var(--so,.8);pointer-events:none}
+.hdots{display:flex;gap:8px;justify-content:center;margin-top:14px;pointer-events:auto}
+.hdots button{width:9px;height:9px;border-radius:9px;background:rgba(255,255,255,.3);transition:width .5s var(--spring),background .3s}
+.hdots button.on{width:30px;background:var(--gold2)}
+.hlabel{pointer-events:none}
+.hbk.swap{animation:swap .9s cubic-bezier(.65,0,.35,1)}
+@keyframes swap{50%{transform:rotateY(180deg) scale(.92)}100%{transform:rotateY(360deg)}}
+@media(max-width:980px){.bscene{perspective:1400px}}
+.hvis{display:flex;flex-direction:column}.hvis .bscene{flex:1;min-height:0}.hvis .hlabel{position:relative;left:auto;bottom:auto;transform:none;margin-top:6px}
+@media(max-width:560px){.hvis{height:560px}.bwrap{scale:.66}.bshadow{width:300px;transform:translate(-50%,170px)}}
 
 .view{animation:fade .7s var(--ease) both}
 .toTop{position:fixed;right:22px;bottom:22px;width:52px;height:52px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;z-index:60;box-shadow:var(--sh);transform:scale(0);transition:transform .5s var(--spring)}
@@ -565,6 +597,14 @@ function cover(c,big){const v=LV[c.l];const T=wrapT(c.short||c.t,13);const fs=T.
  <text x="126" y="282" text-anchor="middle" font-family="Instrument Sans,Arial" font-size="7" letter-spacing="2" fill="#E5C46F">FODMBCS ACADEMY</text></svg></div>`}
 const coverSvg=c=>cover(c).replace(/^<div class="book">/,"").replace(/<\/div>$/,"");
 function book3d(c,W,H,D){const v=LV[c.l];return `<div class="b3" style="--W:${W}px;--H:${H}px;--D:${D}px"><div class="f fr">${coverSvg(c)}<i class="lth"></i><i class="shn"></i><i class="sh"></i></div><div class="f bk" style="background:linear-gradient(135deg,${v.c2},${v.c})"><i class="lth"></i><i class="sh"></i></div><div class="f sp" style="background:linear-gradient(90deg,rgba(0,0,0,.35),${v.c2} 35%,${v.c} 70%,rgba(0,0,0,.4)),${v.c}"><span>${esc(c.short||c.t)}</span><i class="lth"></i><i class="sh"></i></div><div class="f pg"><i class="sh"></i></div><div class="f tp"></div><div class="f bt"></div><span class="rib"></span></div>`}
+function heroBook(c){const v=LV[c.l];return `<div class="b3 hbk" id="hbk" style="--W:300px;--H:420px;--D:58px">
+ <div class="f bk" style="background:linear-gradient(135deg,${v.c2},${v.c})"><i class="lth"></i><i class="sh"></i></div>
+ <div class="f sp" style="background:linear-gradient(90deg,rgba(0,0,0,.35),${v.c2} 35%,${v.c} 70%,rgba(0,0,0,.4)),${v.c}"><span>${esc(c.short||c.t)}</span><i class="lth"></i><i class="sh"></i></div>
+ <div class="f pg"><i class="sh"></i></div><div class="f tp"></div><div class="f bt"></div>
+ <div class="tpage"><div class="tp-in"><img src="${IMG.logo}" alt=""><i></i><small>${v.n}</small><b>${esc(c.t)}</b><em>FODMBCS Global Online Biblical &amp; Theological Academy</em><i></i><span>Opening the Door to Biblical Knowledge</span></div></div>
+ <div class="leaf" style="--k:.62"></div><div class="leaf" style="--k:.78"></div><div class="leaf" style="--k:.9"></div>
+ <div class="cov"><div class="out">${coverSvg(c)}<i class="lth"></i><i class="shn"></i><i class="sh"></i></div><div class="in"><i class="sh"></i></div></div>
+ <span class="rib"></span></div>`}
 const HERO3=["biblical-study-foundations","biblical-studies-diploma","christian-counselling-certification","the-person-power-and-ministry-of-the-holy-spirit","christian-ministry-diploma","ministry-leadership-certification"];
 function lightBook(el,a){const r=Math.PI/180,L=-24;const lit=n=>Math.max(0,Math.cos((n-L)*r));const sh=n=>Math.min(.86,.82*(1-lit(n)));el.style.setProperty("--sf",sh(a).toFixed(3));el.style.setProperty("--ss",sh(a-90).toFixed(3));el.style.setProperty("--sp",(sh(a+90)*.8).toFixed(3));el.style.setProperty("--sb",sh(a+180).toFixed(3));el.style.setProperty("--shx",(50+((a%360+540)%360-180)*1.4).toFixed(1)+"%")}
 /* state */
@@ -597,7 +637,8 @@ V.home=()=>{const F=[CB["old-testament-survey"],CB["biblical-studies-diploma"],C
   <p class="lead">Spiritual growth and Christian education worldwide, offered online by Faith Open Door Ministries Bible College & Seminary.</p>
   <div class="cta"><a class="btn btn-gold" href="#/courses">Explore courses ${ic("arrow")}</a><a class="btn btn-ghost" href="#/register">Enroll now</a></div>
   <div class="facts"><div><b>2016</b><span>Established</span></div><div><b>12</b><span>Online courses & programs</span></div><div><b>$20</b><span>CAD tuition from</span></div></div></div>
-  <div class="hvis" id="hvis"><div class="hglow"></div><div class="hscene" id="hscene"><div class="hring" id="hring">${HERO3.map((id,k)=>`<div class="hb" data-a="${k*60}" style="transform:rotateY(${k*60}deg) translateZ(var(--R))"><a href="#/course/${id}" aria-label="${esc(CB[id].t)}" style="animation-delay:-${k*.75}s">${book3d(CB[id],190,264,40)}</a></div>`).join("")}<div class="hfloor"></div></div></div><div class="hlabel"><small id="hlM">${LV[CB[HERO3[0]].l].s}</small><b id="hlT">${esc(CB[HERO3[0]].t)}</b></div>
+  <div class="hvis" id="hvis"><div class="hglow"></div><div class="bscene" id="bscene"><div class="bwrap" id="bwrap"><a class="hbk-link" id="hbkLink" href="#/course/${HERO3[0]}" aria-label="View course">${heroBook(CB[HERO3[0]])}</a></div><div class="bshadow"></div></div>
+   <div class="hlabel"><small id="hlM">${LV[CB[HERO3[0]].l].s} · $${CB[HERO3[0]].p} CAD</small><b id="hlT">${esc(CB[HERO3[0]].t)}</b><div class="hdots">${HERO3.map((id,k)=>`<button class="${k?"":"on"}" data-hb="${k}" aria-label="${esc(CB[id].t)}"></button>`).join("")}</div></div>
    <div class="seal"><svg viewBox="0 0 200 200"><defs><path id="sc" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#sc">FAITH OPEN DOOR MINISTRIES · BIBLE COLLEGE & SEMINARY ·</textPath></text></svg><b>2016</b><small>EST.</small></div></div></div></section>
  <div class="tick" aria-hidden="true"><div class="tt">${[0,1,2,3].map(()=>DISC.map(d=>`<span>${d[1]}</span><i></i>`).join("")).join("")}</div></div>
  <section class="sec"><div class="wrap mgrid"><div><span class="eyebrow">Established 2016</span><p class="mission" id="mission" style="margin-top:22px">${"Affordable, accessible and attainable Biblical and Theological education worldwide.".split(" ").map((w,i)=>`<span class="mw ${i<3?"g":""}">${w}</span>`).join(" ")}</p></div>
@@ -769,7 +810,7 @@ function route(force){let hh="";try{hh=location.hash}catch(e){}const h=(typeof f
  $("#main").innerHTML=`<div class="view">${html}</div>`;if(window.LEN)LEN.scrollTo(0,{immediate:true});else scrollTo(0,0);
  $$("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#/"+(seg[0]||"")||(!seg.length&&a.getAttribute("href")==="#/")||(seg[0]==="course"&&a.getAttribute("href")==="#/courses")));
  const TT={learn:"Lesson",exam:"Final examination",instructor:"Instructor registration",shop:"Courses",cart:"Cart",checkout:"Checkout",account:"My account",register:"Student registration",dashboard:"Student dashboard",orders:"Orders",certificates:"My certificates & transcript",profile:"Profile",verify:"Verify a certificate",contact:"Contact",privacy:"Privacy Policy",terms:"Terms of Use",refund:"Refund Policy",order:"Order received"};const c=seg[0]==="course"&&CB[seg[1]];document.title=(c?c.t+" | ":seg[0]?(TT[seg[0]]||(NAV.find(n=>n[0]==="#/"+seg[0])||["",seg[0]])[1])+" | ":"")+"FODMBCS Global Online Biblical & Theological Academy";
- renderGrid();syncCart();reveal()}
+ renderGrid();syncCart();reveal();if(window.__hbs){window.__hbs.i=0;window.__hbs.last=performance.now();window.__hbs.hover=false}}
 let IO;
 function reveal(){if(IO)IO.disconnect();const els=$$("[data-r],.wr,.mask,[data-count]");if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){els.forEach(e=>e.classList.add("in"));return}
  IO=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const e=en.target;e.classList.add("in");IO.unobserve(e);if(e.dataset.count){const to=+e.dataset.count,from=to>1000?to-60:0,t0=performance.now();const f=n=>{const k=Math.min(1,(n-t0)/1500);e.textContent=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}}),{rootMargin:"0px 0px -6% 0px",threshold:.05});els.forEach(e=>IO.observe(e))}
@@ -777,6 +818,7 @@ function reveal(){if(IO)IO.disconnect();const els=$$("[data-r],.wr,.mask,[data-c
 document.addEventListener("click",e=>{const el=e.target.closest("a,button");if(!el)return;
  const href=el.tagName==="A"?el.getAttribute("href"):null;
  {const hr=$("#hring");if(hr&&hr._moved>6&&el.closest("#hscene")){e.preventDefault();hr._moved=0;return}}
+ if(el.dataset.hb!==undefined){heroSwap(+el.dataset.hb);return}
  if(el.dataset.add){e.preventDefault();const was=inCart(el.dataset.add);toggleCart(el.dataset.add);toast(was?"Removed from your enrollment":"Added to your enrollment");return}
  if(el.dataset.rm){toggleCart(el.dataset.rm);return}
  if(el.dataset.enroll&&!inCart(el.dataset.enroll)){CART.push(el.dataset.enroll);store.set("fod_cart",CART);syncCart()}
@@ -805,6 +847,8 @@ let LY=0;addEventListener("scroll",()=>{const y=scrollY;document.body.classList.
 addEventListener("hashchange",()=>{let h="";try{h=location.hash.slice(1)}catch(e){}if(h&&h!==CUR)route()});addEventListener("popstate",()=>route());
 addEventListener("keydown",e=>{if(e.key==="Escape"){closeD();document.body.classList.remove("menu")}});
 /* ===== motion engine ===== */
+function heroSwap(k){const st=window.__hbs;if(!st)return;st.i=k;st.last=performance.now();const old=$("#hbk");if(!old)return;old.classList.add("swap");setTimeout(()=>{const c=CB[HERO3[k]];const L=$("#hbkLink");if(!L)return;L.innerHTML=heroBook(c);L.setAttribute("href","#/course/"+c.id);$("#hlT").textContent=c.t;$("#hlM").textContent=LV[c.l].s+" · $"+c.p+" CAD";$$(".hdots button").forEach((b,i)=>b.classList.toggle("on",i===k))},450)}
+document.addEventListener("pointerover",e=>{const st=window.__hbs;if(st&&e.target.closest)st.hover=!!e.target.closest("#bwrap")});
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 let LEN=null;
 function startLenis(){if(RM||!window.Lenis)return;try{LEN=new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});window.LEN=LEN;const raf=t=>{LEN.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf)}catch(e){}}
@@ -816,6 +860,16 @@ function frame(){const y=scrollY,H=innerHeight,doc=document.documentElement.scro
  $("#prog").style.transform=`scaleX(${doc>0?y/doc:0})`;
  // hero exit
  const hero=$("#hero");if(hero){const r=hero.getBoundingClientRect();const p=clamp(-r.top/r.height);const c=hero.querySelector(".wrap>div:first-child");if(c){c.style.transform=`translateY(${p*140}px)`;c.style.opacity=1-p*.9}const bg=$("#heroBg");if(bg)bg.style.transform=`translateY(${p*30}%) scale(${1+p*.1})`;const hv=$("#hvis");if(hv)hv.style.translate=`0 ${p*-100}px`}
+ // hero single book
+ const hb=$("#hbk");if(hb){const now=performance.now();const t=now/1000;const B=$("#bwrap");const st=window.__hbs||(window.__hbs={open:0,tgt:0,mx:0,my:0,i:0,last:now,hover:false});
+  const hero=$("#hero");const p=hero?clamp(-hero.getBoundingClientRect().top/(hero.offsetHeight*.6)):0;
+  const idle=t>2.2?-28-Math.sin(t*1.3)*7:0;const tgt=st.hover?-158:Math.min(idle,-158*p);st.open+=(tgt-st.open)*.08;
+  const by=-24+st.mx*26+Math.sin(t*.6)*6-p*20,bx=8-st.my*14+p*14,fy=Math.sin(t*1.1)*10;
+  B.style.setProperty("--by",by.toFixed(2)+"deg");B.style.setProperty("--bx",bx.toFixed(2)+"deg");B.style.setProperty("--fy",fy.toFixed(1)+"px");B.style.setProperty("--bz",(Math.sin(t*.8)*1.5).toFixed(2)+"deg");
+  hb.style.setProperty("--open",st.open.toFixed(2)+"deg");lightBook(hb,by);
+  const r=Math.PI/180,L=-24;hb.style.setProperty("--si",(.55*(1-Math.max(0,Math.cos((by+st.open+180-L)*r)))).toFixed(3));hb.style.setProperty("--sf",(.8*(1-Math.max(0,Math.cos((by+st.open-L)*r)))).toFixed(3));
+  const sh=hb.parentElement.parentElement.nextElementSibling;if(sh)sh.style.setProperty("--so",(.85-Math.abs(fy)/40).toFixed(2));
+  if(!st.hover&&p<.05&&now-st.last>6500){st.last=now;heroSwap((st.i+1)%HERO3.length)}}
  // hero ring
  const hr=$("#hring");if(hr){const now=performance.now();const dt=Math.min(50,now-(hr._t||now));hr._t=now;if(!hr._drag)hr._ang=(hr._ang||0)-dt*.012-vel*.08;const narrow=innerWidth<560;const W=narrow?122:178,Hh=narrow?170:248;hr.style.setProperty("--W",W+"px");hr.style.setProperty("--H",Hh+"px");hr.style.setProperty("--R",(narrow?165:270)+"px");hr.style.setProperty("--ang",hr._ang+"deg");hr.style.setProperty("--tx",(-8+(hr._my||0)*-8)+"deg");
   let best=-2,bi=0;$$(".hb",hr).forEach((b,k)=>{const a=+b.dataset.a+hr._ang+(hr._mx||0)*10;const el=b.querySelector(".b3");lightBook(el,a);const c=Math.cos(a*Math.PI/180);if(c>best){best=c;bi=k}});
@@ -834,7 +888,7 @@ if(!RM)requestAnimationFrame(frame);
 // pointer: hero tilt, card tilt, cursor
 const cur=$("#cur");let cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
 addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY;
- const hr=$("#hring");if(hr){hr._mx=(e.clientX/innerWidth)-.5;hr._my=(e.clientY/innerHeight)-.5;if(hr._drag){const dx=e.clientX-hr._px;hr._ang+=dx*.35;hr._moved=(hr._moved||0)+Math.abs(dx);hr._px=e.clientX}}
+ {const st=window.__hbs;if(st){st.mx=(e.clientX/innerWidth)-.5;st.my=(e.clientY/innerHeight)-.5}}const hr=$("#hring");if(hr){hr._mx=(e.clientX/innerWidth)-.5;hr._my=(e.clientY/innerHeight)-.5;if(hr._drag){const dx=e.clientX-hr._px;hr._ang+=dx*.35;hr._moved=(hr._moved||0)+Math.abs(dx);hr._px=e.clientX}}
  const t=e.target.closest&&e.target.closest(".tier,.step,.card3,.cc .bw,.kpi");$$(".tilting").forEach(x=>{if(x!==t){x.classList.remove("tilting");x.style.transform=""}});
  if(t&&!RM&&e.pointerType==="mouse"){const r=t.getBoundingClientRect();const px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;t.classList.add("tilting");t.style.transform=`perspective(900px) rotateX(${(.5-py)*10}deg) rotateY(${(px-.5)*12}deg) translateY(-6px)`;t.style.setProperty("--gx",px*100+"%");t.style.setProperty("--gy",py*100+"%");if(!t.querySelector(".glare")){const g=document.createElement("span");g.className="glare";t.appendChild(g)}}
  if(cur)cur.classList.toggle("big",!!(e.target.closest&&e.target.closest("a,button,.cc,.rb")))},{passive:true});
