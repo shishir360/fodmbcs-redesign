@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FODMBCS Global Online Biblical & Theological Academy</title>
+<meta name="description" content="Affordable, accessible and attainable Biblical and Theological education worldwide. Online courses, diplomas and certifications from Faith Open Door Ministries Bible College & Seminary, since 2016.">
+<meta name="theme-color" content="#0F1B3D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F1B3D'/%3E%3Cpath d='M32 14v36M22 26h20' stroke='%23C2952F' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0F1B3D;--navy:#1B2E6B;--navy2:#24397F;--gold:#C2952F;--gold2:#E5C46F;--vellum:#F6F1E7;--vellum2:#EDE4D2;--paper:#FBF8F2;--text:#1A1F2E;--mute:#5B6275;--line:#E2DACA;--wine:#6E2533;--forest:#2B5246;
+ --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+ --r:22px;--rs:14px;--ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.34,1.56,.64,1);--sh:0 30px 60px -30px rgba(15,27,61,.45)}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--sans);color:var(--text);background:var(--paper);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1240px,calc(100% - 40px));margin:0 auto}
+.skip{position:absolute;left:-999px;top:10px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;z-index:300}.skip:focus{left:12px}
+.ico{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacing:-.01em;color:var(--ink)}
+em{font-style:italic}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font:600 12px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.eyebrow:before{content:"";width:28px;height:1.5px;background:currentColor}
+.h2{font-size:clamp(38px,5vw,68px);margin:14px 0 18px}
+.h2 em{color:var(--gold)}
+.lead{font-size:1.12rem;color:var(--mute);max-width:58ch}
+/* buttons */
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;font:600 15px var(--sans);letter-spacing:.02em;transition:color .45s var(--ease);white-space:nowrap}
+.btn:after{content:"";position:absolute;z-index:-1;top:50%;left:50%;width:140%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%) scale(0);transition:transform .6s var(--ease)}
+.btn:hover:after{transform:translate(-50%,-50%) scale(1)}
+.btn .ico{transition:transform .45s var(--ease)}.btn:hover .ico{transform:translateX(5px)}
+.btn-gold{background:var(--gold);color:var(--ink)}.btn-gold:after{background:#fff}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:after{background:var(--gold)}.btn-ink:hover{color:var(--ink)}
+.btn-ghost{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55);color:#fff}.btn-ghost:after{background:#fff}.btn-ghost:hover{color:var(--ink)}
+.btn-line{box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink)}.btn-line:after{background:var(--ink)}.btn-line:hover{color:#fff}
+.btn-sm{min-height:44px;padding:0 20px;font-size:14px}
+.link{font-weight:600;color:var(--ink);background:linear-gradient(var(--gold),var(--gold)) 0 100%/0 2px no-repeat;transition:background-size .4s var(--ease);padding-bottom:2px}
+.link:hover{background-size:100% 2px}
+/* top bar */
+.top{background:var(--ink);color:#C9D0E4;font-size:13px}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:18px}
+.top a{color:#fff}.top a:hover{color:var(--gold2)}
+.top .r{display:flex;gap:20px}
+@media(max-width:760px){.top .r{display:none}.top .wrap{justify-content:center}}
+/* header */
+.hdr{position:sticky;top:0;z-index:80;background:rgba(251,248,242,.92);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:transform .5s var(--ease),border-color .3s,box-shadow .3s}
+body.scrolled .hdr{border-color:var(--line);box-shadow:0 10px 30px -24px rgba(15,27,61,.5)}
+body.away .hdr{transform:translateY(-101%)}
+.hdr .wrap{display:flex;align-items:center;gap:26px;height:86px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand img{height:54px;width:auto;mix-blend-mode:multiply}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{position:relative;padding:10px 14px;font-weight:500;font-size:15px;color:var(--text);border-radius:10px}
+.nav a:after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:1.5px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.nav a:hover:after,.nav a.on:after{transform:scaleX(1)}
+.nav a.on{color:var(--ink);font-weight:600}
+.tools{display:flex;align-items:center;gap:8px}
+.ibtn{position:relative;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;transition:background .2s}
+.ibtn:hover{background:var(--vellum2)}
+.ibtn .n{position:absolute;top:4px;right:2px;min-width:19px;height:19px;border-radius:10px;background:var(--gold);color:var(--ink);font-size:11px;font-weight:700;display:grid;place-items:center;padding:0 5px}
+.ibtn.bump{animation:bump .5s var(--spring)}
+@keyframes bump{40%{transform:scale(1.25) rotate(-8deg)}}
+.burger{display:none}
+.burger i{display:block;width:20px;height:1.8px;background:var(--ink);margin:4px auto;transition:transform .4s var(--ease),opacity .3s}
+body.menu .burger i:nth-child(1){transform:translateY(5.8px) rotate(45deg)}body.menu .burger i:nth-child(2){opacity:0}body.menu .burger i:nth-child(3){transform:translateY(-5.8px) rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:70;background:var(--ink);color:#fff;padding:130px 28px 60px;overflow:auto;transform:translateY(-100%);transition:transform .75s var(--ease)}
+body.menu .sheet{transform:none}
+.sheet a{display:block;font:500 clamp(36px,9vw,64px)/1.15 var(--serif);opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease),color .2s;transition-delay:calc(var(--i)*45ms + .25s)}
+body.menu .sheet a{opacity:1;transform:none}
+.sheet a:hover{color:var(--gold2)}
+.sheet small{display:block;margin-top:34px;color:#9AA4C2;font-size:14px}
+@media(max-width:1060px){.nav,.hdr .hide-m{display:none}.burger{display:block}.hdr .wrap{height:74px}.brand img{height:46px}}
+/* reveal */
+[data-r]{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--d,0)*90ms)}
+[data-r].in{opacity:1;transform:none}
+.wr .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+.wr .w>span{display:inline-block;transform:translateY(110%) rotate(4deg);transition:transform 1.1s var(--ease);transition-delay:calc(var(--w)*70ms)}
+.wr.in .w>span{transform:none}
+.mask{border-radius:var(--r);overflow:hidden}
+.mask img{clip-path:inset(0 0 100% 0);transform:scale(1.15);transition:clip-path 1.4s var(--ease),transform 1.8s var(--ease)}.mask.in img{clip-path:inset(0);transform:none}
+/* hero */
+.hero{position:relative;color:#fff;overflow:hidden;background:var(--ink)}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;opacity:.55;animation:kb 26s ease-in-out infinite alternate}
+@keyframes kb{to{transform:scale(1.12) translate(-2%,-1%)}}
+.hero .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,27,61,.96) 18%,rgba(15,27,61,.72) 52%,rgba(15,27,61,.35))}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;min-height:min(820px,calc(100vh - 126px));padding:80px 0 90px}
+.hero .eyebrow{color:var(--gold2);animation:fade .9s var(--ease) .2s both}
+.hero h1{color:#fff;font-size:clamp(52px,7.4vw,112px);font-weight:500;line-height:.95;margin:22px 0 26px;letter-spacing:-.02em}
+.hero h1 em{color:var(--gold2);font-weight:500}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.hero h1 .w>span{display:inline-block;animation:rise 1.2s var(--ease) both;animation-delay:calc(.3s + var(--w)*90ms)}
+@keyframes rise{from{transform:translateY(112%) rotate(5deg)}}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}}
+.hero p.lead{color:#C9D0E4;font-size:1.18rem;animation:fade 1s var(--ease) 1s both}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px;animation:fade 1s var(--ease) 1.15s both}
+.hero .facts{display:flex;gap:34px;margin-top:46px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);animation:fade 1s var(--ease) 1.3s both;flex-wrap:wrap}
+.hero .facts b{display:block;font:600 34px/1 var(--serif);color:#fff}
+.hero .facts span{font-size:13px;color:#9AA4C2;letter-spacing:.04em}
+.stack{position:relative;height:520px;perspective:1400px}
+.stack .bk{position:absolute;width:250px;left:50%;top:50%;animation:float 7s ease-in-out infinite}
+.stack .bk:nth-child(1){transform:translate(-110%,-58%) rotate(-12deg);animation-delay:-2s}
+.stack .bk:nth-child(2){transform:translate(-50%,-50%);z-index:2;width:280px}
+.stack .bk:nth-child(3){transform:translate(12%,-40%) rotate(10deg);animation-delay:-4s}
+@keyframes float{50%{translate:0 -16px}}
+.stack .bk>div{animation:pop 1.2s var(--spring) both}
+.stack .bk:nth-child(1)>div{animation-delay:.7s}.stack .bk:nth-child(2)>div{animation-delay:.9s}.stack .bk:nth-child(3)>div{animation-delay:1.1s}
+@keyframes pop{from{opacity:0;transform:scale(.6) translateY(60px) rotateY(-40deg)}}
+.seal{position:absolute;right:-6px;bottom:22px;width:150px;height:150px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;z-index:3;box-shadow:var(--sh);animation:fade 1s var(--ease) 1.4s both}
+.seal svg{position:absolute;inset:6px;width:calc(100% - 12px);animation:spin 22s linear infinite}
+.seal text{font:600 11.5px var(--sans);letter-spacing:.2em;fill:var(--ink)}
+.seal b{font:600 34px/1 var(--serif)}
+.seal small{position:absolute;bottom:42px;font-size:9px;font-weight:700;letter-spacing:.2em}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:980px){.hero .wrap{grid-template-columns:1fr;min-height:0;padding:60px 0 70px}.stack{height:400px}.stack .bk{width:200px}.stack .bk:nth-child(2){width:220px}.seal{width:120px;height:120px;right:0}}
+/* book cover */
+.book{position:relative;aspect-ratio:3/4.1;border-radius:4px 12px 12px 4px;transform-style:preserve-3d;box-shadow:var(--sh),inset 6px 0 0 rgba(0,0,0,.18),inset 9px 0 0 rgba(255,255,255,.06);overflow:hidden}
+.book svg{width:100%;height:100%;display:block}
+.book:after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.22) 50%,rgba(255,255,255,0) 60%);transform:translateX(-120%);transition:transform 1.2s var(--ease)}
+/* ticker */
+.tick{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:18px 0;font:600 clamp(20px,2.4vw,30px) var(--serif);font-style:italic}
+.tick .tt{display:inline-flex;align-items:center;animation:tick 40s linear infinite}
+.tick:hover .tt{animation-play-state:paused}
+.tick span{padding:0 26px}
+.tick i{width:14px;height:14px;background:var(--ink);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);flex:none}
+@keyframes tick{to{transform:translateX(-25%)}}
+/* sections */
+.sec{padding:130px 0}
+.sec.v{background:var(--vellum)}
+.sec.dark{background:var(--ink);color:#C9D0E4}
+.sec.dark h2,.sec.dark h3{color:#fff}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.head .lead{max-width:46ch}
+/* mission */
+.mission{font:500 clamp(34px,4.6vw,64px)/1.12 var(--serif);color:var(--ink);max-width:22ch;letter-spacing:-.01em}
+.mission .mw{color:rgba(15,27,61,.16);transition:color .5s}
+.mission .mw.on{color:var(--ink)}
+.mission .mw.g.on{color:var(--gold)}
+.mgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:70px;align-items:end}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.stats div{padding:26px 0 22px;border-bottom:1px solid var(--line)}
+.stats div:nth-child(odd){border-right:1px solid var(--line);padding-right:20px}.stats div:nth-child(even){padding-left:24px}
+.stats b{display:block;font:600 clamp(44px,5vw,68px)/1 var(--serif);color:var(--ink)}
+.stats span{color:var(--mute);font-size:14px}
+@media(max-width:900px){.mgrid{grid-template-columns:1fr;gap:40px}}
+/* disciplines */
+.disc{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.dc{padding:34px 26px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden;transition:color .5s;isolation:isolate;min-height:330px;display:flex;flex-direction:column}
+.dc:before{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleY(0);transform-origin:bottom;transition:transform .7s var(--ease);z-index:-1}
+.dc:hover:before{transform:none}
+.dc:hover{color:#C9D0E4}.dc:hover h3{color:#fff}
+.dc .gl{width:58px;height:58px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold);display:grid;place-items:center;margin-bottom:auto;transition:transform .8s var(--spring),background .4s,color .4s}
+.dc:hover .gl{transform:rotate(-20deg) scale(1.08);background:var(--gold);color:var(--ink)}
+.dc .gl .ico{width:26px;height:26px}
+.dc small{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:40px}
+.dc h3{font-size:30px;margin:8px 0 10px;transition:color .4s}
+.dc p{font-size:14.5px;color:inherit;opacity:.85}
+@media(max-width:1060px){.disc{grid-template-columns:1fr 1fr}.dc{min-height:260px}}
+@media(max-width:560px){.disc{grid-template-columns:1fr}}
+/* tiers */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tier{border-radius:var(--r);padding:38px 34px 34px;background:#fff;box-shadow:0 0 0 1px var(--line);position:relative;overflow:hidden;transition:transform .7s var(--spring),box-shadow .6s;display:flex;flex-direction:column}
+.tier:hover{transform:translateY(-10px);box-shadow:0 0 0 1px var(--line),var(--sh)}
+.tier .lv{display:flex;justify-content:space-between;align-items:center}
+.tier .lv span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.tier .lv i{width:12px;height:12px;border-radius:50%}
+.tier h3{font-size:40px;margin:22px 0 4px}
+.tier .pr{font:600 64px/1 var(--serif);color:var(--ink);margin:18px 0 2px}
+.tier .pr small{font:500 15px var(--sans);color:var(--mute);margin-left:6px}
+.tier p{color:var(--mute);margin:14px 0 26px;flex:1}
+.tier .cnt{font-size:13px;color:var(--mute);margin-bottom:18px}
+.tier.dip{background:var(--ink);color:#C9D0E4;box-shadow:none}.tier.dip h3,.tier.dip .pr{color:#fff}.tier.dip p,.tier.dip .cnt,.tier.dip .pr small{color:#9AA4C2}
+@media(max-width:900px){.tiers{grid-template-columns:1fr}}
+/* course cards */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:10px 18px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--line);font-weight:600;font-size:14px;transition:background .3s,color .3s,box-shadow .3s}
+.chip:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.chip.on{background:var(--ink);color:#fff;box-shadow:none}
+.chip small{opacity:.6;margin-left:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:48px 26px}
+.cc{display:flex;flex-direction:column;perspective:1200px}
+.cc .bw{background:var(--vellum);border-radius:var(--r);padding:34px 40px 30px;display:grid;place-items:center;transition:background .5s}
+.cc .book{width:100%;max-width:200px;transition:transform .9s var(--spring),box-shadow .6s}
+.cc:hover .book{transform:rotateY(-18deg) rotateX(4deg) translateY(-8px)}
+.cc:hover .book:after{transform:translateX(120%)}
+.cc:hover .bw{background:var(--vellum2)}
+.cc .meta{display:flex;justify-content:space-between;align-items:center;margin:20px 0 6px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.cc .meta .p{font:600 24px var(--serif);letter-spacing:0;color:var(--ink)}
+.cc h3{font-size:27px;line-height:1.08}
+.cc h3 a:hover{color:var(--navy2)}
+.cc p{color:var(--mute);font-size:14.5px;margin:10px 0 18px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cc .act{display:flex;gap:10px;align-items:center;margin-top:auto}
+.add{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;transition:background .3s,color .3s}
+.add:hover{background:var(--gold);color:var(--ink)}
+.add.in{background:var(--forest)}
+.add .ico{width:18px;height:18px;transition:transform .5s var(--spring)}.add:hover .ico{transform:rotate(90deg)}
+.lvl-i{color:var(--navy2)}.lvl-d{color:var(--wine)}.lvl-c{color:var(--forest)}
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.split .ph{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;position:relative}
+.split .ph img{width:100%;height:100%;object-fit:cover}
+.feat{display:grid;gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.feat div{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.feat .gl{width:52px;height:52px;border-radius:50%;background:var(--vellum2);color:var(--navy);display:grid;place-items:center}
+.feat b{font:600 22px/1.2 var(--serif);color:var(--ink);display:block}
+.feat p{color:var(--mute);font-size:15px}
+.badge{position:absolute;left:24px;bottom:24px;background:#fff;border-radius:16px;padding:16px 20px;box-shadow:var(--sh);display:flex;gap:14px;align-items:center;max-width:280px}
+.badge .gl{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;flex:none}
+.badge b{font-size:14px;display:block;line-height:1.3}.badge small{color:var(--mute);font-size:12.5px}
+@media(max-width:900px){.split{grid-template-columns:1fr;gap:44px}.split .ph{aspect-ratio:4/3.6}}
+/* quote */
+.quote{text-align:center;max-width:1000px;margin:0 auto}
+.quote .mk{font:600 180px/.6 var(--serif);color:var(--gold);height:80px}
+.quote blockquote{font:500 clamp(32px,4.2vw,58px)/1.12 var(--serif);color:#fff;letter-spacing:-.01em}
+.quote blockquote em{color:var(--gold2)}
+.quote .by{margin-top:34px;display:inline-flex;align-items:center;gap:16px;text-align:left}
+.quote .by .av{width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font:600 22px var(--serif)}
+.quote .by b{color:#fff;display:block}.quote .by span{font-size:14px;color:#9AA4C2}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding:36px 28px 34px;border-radius:var(--r);background:#fff;box-shadow:0 0 0 1px var(--line);transition:transform .7s var(--spring),box-shadow .5s,background .5s}
+.step:hover{transform:translateY(-8px) rotate(-.6deg);box-shadow:var(--sh)}
+.step .n{font:600 72px/.8 var(--serif);color:transparent;-webkit-text-stroke:1.2px var(--gold);display:block;margin-bottom:34px;transition:color .5s}
+.step:hover .n{color:var(--gold)}
+.step h3{font-size:28px;margin-bottom:10px}
+.step p{color:var(--mute);font-size:15px}
+.steps:before{content:"";position:absolute}
+@media(max-width:1000px){.steps{grid-template-columns:1fr 1fr}}@media(max-width:560px){.steps{grid-template-columns:1fr}}
+/* pay */
+.pay{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:stretch}
+.paybox{background:var(--ink);color:#C9D0E4;border-radius:var(--r);padding:44px;position:relative;overflow:hidden}
+.paybox:before{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;border-radius:50%;border:1px solid rgba(229,196,111,.25);box-shadow:0 0 0 40px rgba(229,196,111,.05),0 0 0 80px rgba(229,196,111,.03)}
+.paybox h3{color:#fff;font-size:40px;margin:14px 0 12px}
+.paybox ol{list-style:none;margin:26px 0 30px;display:grid;gap:14px}
+.paybox li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+.paybox li i{width:34px;height:34px;border-radius:50%;background:rgba(229,196,111,.16);color:var(--gold2);display:grid;place-items:center;font:600 16px var(--serif);font-style:normal}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font:600 23px/1.25 var(--serif);color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font:300 30px/1 var(--sans);color:var(--gold);transition:transform .4s var(--ease)}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq p{color:var(--mute);margin-top:12px;max-width:60ch}
+@media(max-width:900px){.pay{grid-template-columns:1fr}.paybox{padding:32px 26px}}
+/* CTA */
+.cta-band{position:relative;overflow:hidden;background:var(--navy);color:#fff;border-radius:32px;padding:90px 60px;text-align:center}
+.cta-band:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 0%,rgba(229,196,111,.28),transparent 45%),radial-gradient(circle at 90% 100%,rgba(255,255,255,.12),transparent 40%)}
+.cta-band h2{color:#fff;position:relative;font-size:clamp(40px,5.6vw,80px);font-weight:500}
+.cta-band h2 em{color:var(--gold2)}
+.cta-band p{position:relative;color:#C9D0E4;max-width:52ch;margin:16px auto 34px;font-size:1.1rem}
+.cta-band .row{position:relative;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+@media(max-width:600px){.cta-band{padding:60px 24px;border-radius:24px}}
+/* page head */
+.ph-head{background:var(--ink);color:#C9D0E4;padding:110px 0 90px;position:relative;overflow:hidden}
+.ph-head:after{content:"";position:absolute;right:-180px;top:-180px;width:560px;height:560px;border-radius:50%;border:1px solid rgba(229,196,111,.2);box-shadow:0 0 0 60px rgba(229,196,111,.04),0 0 0 120px rgba(229,196,111,.025)}
+.ph-head h1{color:#fff;font-size:clamp(48px,6.6vw,96px);font-weight:500;margin:20px 0 18px;max-width:16ch}
+.ph-head h1 em{color:var(--gold2)}
+.ph-head .lead{color:#AEB7D3}
+.crumb{font-size:13px;color:#9AA4C2;margin-bottom:6px}.crumb a:hover{color:#fff}
+/* prose */
+.prose{max-width:760px}
+.prose h2{font-size:42px;margin:50px 0 14px}
+.prose p{color:var(--mute);margin-bottom:16px;font-size:1.08rem}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card3{background:#fff;border-radius:var(--r);padding:34px 30px;box-shadow:0 0 0 1px var(--line);transition:transform .7s var(--spring),box-shadow .5s}
+.card3:hover{transform:translateY(-8px);box-shadow:var(--sh)}
+.card3 .gl{width:54px;height:54px;border-radius:50%;background:var(--vellum2);color:var(--navy);display:grid;place-items:center;margin-bottom:26px}
+.card3 h3{font-size:28px;margin-bottom:10px}
+.card3 p{color:var(--mute);font-size:15px}
+@media(max-width:900px){.cards3{grid-template-columns:1fr}}
+/* course detail */
+.cd{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start;padding:80px 0 40px}
+.cd .bw{background:var(--vellum);border-radius:28px;padding:60px;display:grid;place-items:center;position:sticky;top:110px;perspective:1400px}
+.cd .bw .book{width:min(320px,100%);animation:pop 1.2s var(--spring) both}
+.cd h1{font-size:clamp(42px,5vw,72px);font-weight:500;margin:16px 0 18px}
+.cd .pr{display:flex;align-items:baseline;gap:12px;margin:24px 0 8px}
+.cd .pr b{font:600 54px/1 var(--serif);color:var(--ink)}
+.cd .pr span{color:var(--mute)}
+.cd ul.inc{list-style:none;margin:30px 0;border-top:1px solid var(--line)}
+.cd ul.inc li{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.cd ul.inc .ico{color:var(--gold);margin-top:3px}
+.note{background:var(--vellum);border-radius:var(--rs);padding:18px 20px;font-size:14.5px;color:var(--mute);margin-top:22px}
+.note b{color:var(--ink)}
+@media(max-width:900px){.cd{grid-template-columns:1fr;gap:40px;padding-top:50px}.cd .bw{position:static;padding:40px}}
+/* forms */
+.form{display:grid;gap:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.row2{grid-template-columns:1fr}}
+.fld label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.fld input,.fld select,.fld textarea{width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);background:#fff;outline:0;transition:border-color .2s,box-shadow .2s}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--ink);box-shadow:0 0 0 4px rgba(194,149,47,.18)}
+.fld .msg{display:none;color:#B3261E;font-size:13px;margin-top:4px}
+.fld.err input,.fld.err textarea{border-color:#B3261E}.fld.err .msg{display:block}
+.panel{background:#fff;border-radius:var(--r);padding:36px;box-shadow:0 0 0 1px var(--line)}
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(15,27,61,.45);z-index:90;opacity:0;pointer-events:none;transition:opacity .4s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;right:0;top:0;bottom:0;width:min(440px,100%);background:var(--paper);z-index:95;transform:translateX(100%);transition:transform .6s var(--ease);display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.drawer .h{display:flex;justify-content:space-between;align-items:center;padding:24px 26px;border-bottom:1px solid var(--line)}
+.drawer .h h3{font-size:30px}
+.drawer .items{flex:1;overflow:auto;padding:10px 26px}
+.li{display:grid;grid-template-columns:62px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.li .book{width:62px}
+.li b{font:600 19px/1.15 var(--serif);color:var(--ink);display:block}.li small{color:var(--mute);font-size:13px}
+.li .rm{font-size:12.5px;color:var(--mute);text-decoration:underline;margin-top:4px}
+.drawer .f{padding:22px 26px 28px;border-top:1px solid var(--line);display:grid;gap:12px}
+.drawer .tot{display:flex;justify-content:space-between;font:600 24px var(--serif);color:var(--ink)}
+.empty{text-align:center;color:var(--mute);padding:60px 10px}
+.empty b{display:block;font:600 28px var(--serif);color:var(--ink);margin-bottom:8px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,40px);background:var(--ink);color:#fff;padding:14px 22px;border-radius:999px;font-weight:600;font-size:14.5px;opacity:0;transition:all .5s var(--spring);z-index:120;display:flex;gap:10px;align-items:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast .ico{color:var(--gold2)}
+/* footer */
+.ftr{background:var(--ink);color:#AEB7D3;padding-top:100px;margin-top:130px;overflow:hidden}
+.ftr .big{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;padding-bottom:70px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ftr .big h2{color:#fff;font-size:clamp(44px,6vw,90px);font-weight:500;max-width:14ch}
+.ftr .big h2 em{color:var(--gold2)}
+.ftr .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding:70px 0}
+.ftr .logo{background:#fff;border-radius:16px;padding:12px 16px;display:inline-block;margin-bottom:20px}
+.ftr .logo img{height:58px}
+.ftr h4{color:var(--gold2);font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}
+.ftr .cols a{display:block;width:fit-content;padding:5px 0;transition:color .3s,transform .4s var(--ease)}
+.ftr .cols a:hover{color:#fff;transform:translateX(6px)}
+.ftr address{font-style:normal;line-height:1.8}
+.ftr .mark{font:italic 600 clamp(80px,15vw,250px)/.9 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(229,196,111,.28);white-space:nowrap;display:inline-flex;animation:tick 60s linear infinite}
+.ftr .mark span{padding-right:60px}
+.ftr .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:26px 0 34px;border-top:1px solid rgba(255,255,255,.1);font-size:13.5px}
+.ftr .bot a:hover{color:#fff}
+@media(max-width:900px){.ftr .cols{grid-template-columns:1fr 1fr}}@media(max-width:560px){.ftr .cols{grid-template-columns:1fr}}
+.view{animation:fade .7s var(--ease) both}
+.toTop{position:fixed;right:22px;bottom:22px;width:52px;height:52px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;z-index:60;box-shadow:var(--sh);transform:scale(0);transition:transform .5s var(--spring)}
+body.scrolled .toTop{transform:none}
+@media(max-width:760px){.sec{padding:90px 0}.head{margin-bottom:40px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}[data-r],.wr .w>span,.mask img{opacity:1!important;transform:none!important;clip-path:none!important}.mission .mw{color:var(--ink)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top"><div class="wrap"><span>Admissions open worldwide · Tuition from $20 CAD</span><div class="r"><a href="mailto:admissions@fodmbcsacademy.com">admissions@fodmbcsacademy.com</a><a href="https://fodmbcsacademy.com/my-account-2/">Student login</a></div></div></div>
+<header class="hdr"><div class="wrap">
+ <a class="brand" href="#/" aria-label="FODMBCS Academy home"><img src="__IMG_logo__" alt="FODMBCS Global Online Biblical & Theological Academy"></a>
+ <nav class="nav" id="nav" aria-label="Main"></nav>
+ <div class="tools"><button class="ibtn" id="cartBtn" aria-label="Enrollment cart"><svg class="ico" viewBox="0 0 24 24"><path d="M4 19.5V5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zm0 0A2 2 0 006 23h13"/><path d="M9 7h6"/></svg><span class="n" id="cartN" hidden>0</span></button><a class="btn btn-ink btn-sm hide-m" href="#/enroll">Enroll now</a><button class="ibtn burger" id="burger" aria-label="Menu"><i></i><i></i><i></i></button></div>
+</div></header>
+<div class="sheet" id="sheet"></div>
+<main id="main"></main>
+<footer class="ftr" id="ftr"></footer>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Enrollment cart"><div class="h"><h3>Your courses</h3><button class="ibtn" id="dClose" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div class="items" id="dItems"></div><div class="f" id="dFoot"></div></aside>
+<div class="toast" id="toast" role="status"></div>
+<a class="toTop" href="#main" aria-label="Back to top" onclick="scrollTo({top:0});return false"><svg class="ico" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+<script>
+const IMG=__IMGS__;
+const WP="https://fodmbcsacademy.com";
+const MAIL="admissions@fodmbcsacademy.com";
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const IC={book:'<path d="M4 19.5V5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zm0 0A2 2 0 006 23h13"/>',cross:'<path d="M12 3v18M7 8h10"/>',dove:'<path d="M3 13c4 0 6-2 8-6 1 4 4 6 8 6-2 4-6 6-10 6-3 0-5-2-6-6z"/><path d="M15 9l3-3"/>',heart:'<path d="M12 20s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.5-7 10-7 10z"/>',compass:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',leaf:'<path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15M5 19l7-7"/>',scroll:'<path d="M7 4h11v13a3 3 0 01-3 3H6a3 3 0 01-3-3v-1h11v1a3 3 0 003 3"/><path d="M7 4a3 3 0 00-3 3v1h3"/>',flame:'<path d="M12 21c4 0 7-3 7-7 0-5-5-7-5-11-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 4-2 7 0 4 3 7 7 7z"/>',cup:'<path d="M6 3h12l-1 7a5 5 0 01-10 0zM12 15v5M8 21h8"/>',lamp:'<path d="M3 15h12l3-4h3l-4 6H5zM9 15c0-3 3-4 3-7"/>',users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.5a3.5 3.5 0 010 7M21.5 20c0-3-1.8-5.5-4.5-6.3"/>',globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',screen:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',plus:'<path d="M12 5v14M5 12h14"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',shield:'<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/>',cert:'<circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5 4.5 2.5L15 13.5"/>',pen:'<path d="M4 20l4-1 11-11-3-3L5 16z"/>'};
+const ic=(n,c="")=>`<svg class="ico ${c}" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+const LV={i:{n:"Introductory Course",s:"Introductory",c:"#1B2E6B",c2:"#24397F",price:20},d:{n:"Diploma",s:"Diploma",c:"#6E2533",c2:"#86303F",price:40},c:{n:"Certification",s:"Certification",c:"#2B5246",c2:"#356454",price:60}};
+const FIVE="Includes five lessons and a final examination.";
+const COURSES=[
+ {id:"biblical-study-foundations",t:"Biblical Study Foundations",l:"i",p:20,ic:"book",d:"A self-paced online introduction to the Bible, with guided lessons and a downloadable study workbook. Build a confident starting point for reading Scripture in context.",inc:["Self-paced guided online lessons","Downloadable study workbook","Introduction to reading Scripture in context"]},
+ {id:"old-testament-survey",t:"Old Testament Survey",l:"i",p:20,ic:"scroll",d:"Explore the structure, major themes, and historical setting of the Old Testament through self-paced online lessons and a downloadable course guide. Designed for learners seeking a clear overview before deeper study.",inc:["Self-paced online lessons","Downloadable course guide","Structure, major themes and historical setting"]},
+ {id:"new-testament-survey",t:"New Testament Survey",l:"i",p:20,ic:"cross",d:"Study the books, central themes, and first-century context of the New Testament with self-paced online lessons and a downloadable reference workbook. A practical starting course for understanding the New Testament as a whole.",inc:["Self-paced online lessons","Downloadable reference workbook","Books, themes and first-century context"]},
+ {id:"reading-scripture-well",t:"Reading Scripture Well",l:"i",p:20,ic:"lamp",d:"This self-paced online course pairs lessons on literary context and interpretation with a practical downloadable reading guide. Learn a more thoughtful approach to studying biblical passages.",inc:["Lessons on literary context and interpretation","Practical downloadable reading guide","Self-paced online study"]},
+ {id:"prayer-and-formation",t:"Prayer and Formation",l:"i",p:20,ic:"leaf",d:"A self-paced online course on prayer and Christian spiritual formation, with guided reflections and a downloadable practice journal. Make space for a more intentional rhythm of devotional learning.",inc:["Guided reflections","Downloadable practice journal","Self-paced devotional learning"]},
+ {id:"biblical-christian-counselling-foundations-and-principles",t:"Biblical Christian Counselling: Foundations and Principles",short:"Biblical Christian Counselling",l:"i",p:20,ic:"heart",d:"An online course from FODMBCS Global Online Biblical & Theological Academy introducing the foundations and principles of Biblical Christian counselling. "+FIVE,inc:["Five online lessons","Final examination","Foundations and principles of Biblical counselling"]},
+ {id:"the-new-covenant-in-the-blood-of-jesus-christ",t:"The New Covenant in the Blood of Jesus Christ",short:"The New Covenant",l:"i",p:20,ic:"cup",d:"An online course from FODMBCS Global Online Biblical & Theological Academy on the New Covenant in the blood of Jesus Christ. "+FIVE,inc:["Five online lessons","Final examination","Study of the New Covenant"]},
+ {id:"the-person-power-and-ministry-of-the-holy-spirit",t:"The Person, Power, and Ministry of the Holy Spirit",short:"The Holy Spirit",l:"i",p:20,ic:"dove",d:"An online course from FODMBCS Global Online Biblical & Theological Academy on the person, power, and ministry of the Holy Spirit. "+FIVE,inc:["Five online lessons","Final examination","The person, power and ministry of the Holy Spirit"]},
+ {id:"biblical-studies-diploma",t:"Biblical Studies Diploma",l:"d",p:40,ic:"book",d:"An online diploma program bringing together guided biblical studies lessons, course readings, and structured learning activities. Begin a broader study of Scripture through an accessible program with tuition starting at $40 CAD.",inc:["Guided biblical studies lessons","Course readings","Structured learning activities"]},
+ {id:"christian-ministry-diploma",t:"Christian Ministry Diploma",l:"d",p:40,ic:"users",d:"A guided online diploma program focused on ministry foundations, with structured lessons, downloadable study materials, and practical reflection activities. Explore preparation for Christian service through a program with tuition starting at $40 CAD.",inc:["Structured lessons on ministry foundations","Downloadable study materials","Practical reflection activities"]},
+ {id:"christian-counselling-certification",t:"Christian Counselling Certification",l:"c",p:60,ic:"heart",d:"A structured online certification program introducing Christian counselling principles through focused lessons, case-based learning materials, and assessments. Build foundational knowledge for compassionate, faith-informed support.",inc:["Focused lessons on counselling principles","Case-based learning materials","Assessments"]},
+ {id:"ministry-leadership-certification",t:"Ministry Leadership Certification",l:"c",p:60,ic:"compass",d:"This online certification program covers practical foundations of Christian ministry leadership through guided lessons, planning exercises, and assessments. Strengthen your approach to serving and leading a ministry community.",inc:["Guided lessons on ministry leadership","Planning exercises","Assessments"]}];
+const CB=Object.fromEntries(COURSES.map(c=>[c.id,c]));
+/* book cover */
+function wrapT(t,n){const w=t.split(" "),L=[];let s="";for(const x of w){if((s+" "+x).trim().length>n&&s){L.push(s);s=x}else s=(s+" "+x).trim()}L.push(s);return L}
+function cover(c,big){const v=LV[c.l];const T=wrapT(c.short||c.t,13);const fs=T.length>3?17:T.length>2?19:21;const y0=150-((T.length-1)*fs*1.1)/2;
+ return `<div class="book"><svg viewBox="0 0 240 328" role="img" aria-label="${esc(c.t)} cover"><defs><linearGradient id="g${c.id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${v.c2}"/><stop offset="1" stop-color="${v.c}"/></linearGradient></defs>
+ <rect width="240" height="328" fill="url(#g${c.id})"/><rect x="0" width="14" height="328" fill="rgba(0,0,0,.22)"/>
+ <rect x="26" y="16" width="200" height="296" fill="none" stroke="#C9A24A" stroke-width="1.2"/><rect x="31" y="21" width="190" height="286" fill="none" stroke="#C9A24A" stroke-width=".6" opacity=".7"/>
+ <text x="126" y="50" text-anchor="middle" font-family="Instrument Sans,Arial" font-size="8" letter-spacing="2.4" fill="#E5C46F">${v.s.toUpperCase()}</text>
+ <g transform="translate(108 64) scale(.75)" fill="none" stroke="#E5C46F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${IC[c.ic]}</g>
+ ${T.map((l,i)=>`<text x="126" y="${y0+i*fs*1.12+40}" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="${fs}" font-weight="600" fill="#F6EAD0">${esc(l)}</text>`).join("")}
+ <line x1="96" y1="262" x2="156" y2="262" stroke="#C9A24A" stroke-width=".8"/>
+ <text x="126" y="282" text-anchor="middle" font-family="Instrument Sans,Arial" font-size="7" letter-spacing="2" fill="#E5C46F">FODMBCS ACADEMY</text></svg></div>`}
+/* state */
+let CART=store.get("fod_cart",[]);
+const inCart=id=>CART.includes(id);
+function toggleCart(id){if(inCart(id))CART=CART.filter(x=>x!==id);else{CART.push(id);const b=$("#cartBtn");b.classList.remove("bump");void b.offsetWidth;b.classList.add("bump")}store.set("fod_cart",CART);syncCart()}
+function syncCart(){const n=$("#cartN");n.textContent=CART.length;n.hidden=!CART.length;$$("[data-add]").forEach(b=>{const on=inCart(b.dataset.add);b.classList.toggle("in",on);b.innerHTML=on?`${ic("check")}Added`:`${ic("plus")}Add to enrollment`});renderDrawer()}
+function renderDrawer(){const tot=CART.reduce((s,id)=>s+CB[id].p,0);
+ $("#dItems").innerHTML=CART.length?CART.map(id=>{const c=CB[id];return `<div class="li">${cover(c)}<div><b>${esc(c.t)}</b><small>${LV[c.l].n}</small><br><button class="rm" data-rm="${id}">Remove</button></div><b>$${c.p}</b></div>`}).join(""):`<div class="empty"><b>No courses yet</b>Browse the catalogue and add the courses you want to enroll in.</div>`;
+ $("#dFoot").innerHTML=CART.length?`<div class="tot"><span>Tuition</span><span>$${tot} CAD</span></div><a class="btn btn-ink" href="#/enroll" style="justify-content:center">Request enrollment ${ic("arrow")}</a><small style="color:var(--mute);font-size:13px">Tuition is paid by Interac e-Transfer. Course access is activated once payment is received and verified.</small>`:`<a class="btn btn-ink" href="#/courses" style="justify-content:center">Browse courses ${ic("arrow")}</a>`}
+const openD=()=>{$("#drawer").classList.add("on");$("#scrim").classList.add("on")},closeD=()=>{$("#drawer").classList.remove("on");$("#scrim").classList.remove("on")};
+function toast(m){const t=$("#toast");t.innerHTML=ic("check")+esc(m);t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),2400)}
+/* helpers */
+const words=(s,base=0)=>s.split(" ").map((w,i)=>`<span class="w"><span style="--w:${i+base}">${w}</span></span>`).join(" ");
+const h2=(a,b,tag="h2",cls="h2")=>`<${tag} class="${cls} wr">${words(a)}${b?` <em>${words(b,a.split(" ").length)}</em>`:""}</${tag}>`;
+const card=(c,i=0)=>`<article class="cc" data-r style="--d:${i%4}"><a class="bw" href="#/course/${c.id}" aria-label="${esc(c.t)}">${cover(c)}</a><div class="meta"><span class="lvl-${c.l}">${LV[c.l].s}</span><span class="p">$${c.p} <small style="font:500 12px var(--sans);color:var(--mute)">CAD</small></span></div><h3><a href="#/course/${c.id}">${esc(c.t)}</a></h3><p>${esc(c.d)}</p><div class="act"><button class="add" data-add="${c.id}"></button><a class="link" href="#/course/${c.id}">Details</a></div></article>`;
+const pageHead=(crumb,eb,a,b,lead)=>`<section class="ph-head"><div class="wrap"><div class="crumb"><a href="#/">Home</a> / ${crumb}</div><span class="eyebrow">${eb}</span>${h2(a,b,"h1","wr")}<p class="lead">${lead}</p></div></section>`;
+const ctaBand=()=>`<section class="sec" style="padding-bottom:0"><div class="wrap"><div class="cta-band" data-r>${h2("Begin your Biblical and","Theological study")}<p>Explore available courses, register as a student, and learn online with the FODMBCS Academy, from wherever you are in the world.</p><div class="row"><a class="btn btn-gold" href="#/courses">Explore courses ${ic("arrow")}</a><a class="btn btn-ghost" href="#/enroll">Enroll now</a></div></div></div></section>`;
+const DISC=[["Scripture","Biblical Studies","Study the books, themes and context of Scripture through structured online lessons.","book"],["Doctrine","Theology","Explore core Christian doctrine with clear, accessible course material for each level of study.","cross"],["Care","Christian Counselling","Learn foundations for pastoral care and counselling grounded in Biblical and theological teaching.","heart"],["Service","Ministry","Prepare for faithful Christian service in your church, community and calling.","users"],["Vision","Leadership","Practical foundations for serving and leading a ministry community.","compass"]];
+const tiers=()=>`<div class="tiers">${[["i","Introductory Courses","Single introductory courses in Biblical Studies, Theology, Christian Counselling, Ministry and Leadership."],["d","Diplomas","Structured diploma programs for students pursuing a fuller course of Biblical and Theological study."],["c","Certifications","Certification programs that recognize focused, completed study in a chosen area of Christian education."]].map((x,i)=>{const n=COURSES.filter(c=>c.l===x[0]).length;return `<div class="tier ${x[0]==="d"?"dip":""}" data-r style="--d:${i}"><div class="lv"><span class="lvl-${x[0]}" ${x[0]==="d"?'style="color:var(--gold2)"':""}>${LV[x[0]].s}</span><i style="background:${LV[x[0]].c}"></i></div><h3>${x[1]}</h3><div class="pr">$${LV[x[0]].price}<small>CAD starting</small></div><p>${x[2]}</p><div class="cnt">${n} ${n>1?"programs":"program"} available</div><a class="btn ${x[0]==="d"?"btn-gold":"btn-line"} btn-sm" href="#/courses?l=${x[0]}">View ${x[1].toLowerCase()} ${ic("arrow")}</a></div>`}).join("")}</div>`;
+const steps=()=>`<div class="steps">${[["Explore courses","Browse Biblical Studies, Theology, Christian Counselling, Ministry and Leadership courses, then choose the certificate, certification or diploma that fits your next step."],["Submit your inquiry","Contact the admissions committee to confirm the course you have chosen and any entry questions you have before you register."],["Register as a student","Create your student account and complete course intake enrollment through the academy’s online registration process."],["Begin online study","Once enrolled, access your online courses and study at a pace that suits your schedule from wherever you are."]].map((s,i)=>`<div class="step" data-r style="--d:${i}"><span class="n">0${i+1}</span><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("")}</div>`;
+const payBlock=()=>`<div class="pay"><div class="paybox" data-r><span class="eyebrow" style="color:var(--gold2)">Secure checkout</span><h3>Pay tuition by Interac e-Transfer</h3><p>Online tuition payment will open shortly. Tuition will be paid by Interac e-Transfer, and the payment details will be shown at checkout as soon as online payment opens.</p><ol><li><i>1</i><span>Choose your course and request enrollment.</span></li><li><i>2</i><span>Send your tuition by Interac e-Transfer using the details provided.</span></li><li><i>3</i><span>Course access is activated once the administration office has received and verified your payment.</span></li></ol><a class="btn btn-gold" href="#/enroll">Request enrollment ${ic("arrow")}</a></div>
+ <div class="faq" data-r style="--d:1">${[["How much does tuition cost?","Introductory courses start at $20 CAD, diplomas at $40 CAD and certifications at $60 CAD. The final tuition for a specific course is shown on its course page."],["How do I pay?","Tuition is paid by Interac e-Transfer. Payment details are shown at checkout once online payment opens; until then, contact the Admissions Office to enroll."],["When can I start studying?","Your course access is activated as soon as the administration office has received and verified your payment."],["Can I study at my own pace?","Yes. Courses are online and self-paced, so you can study around your work, ministry and family commitments, from any connected device."],["Who can I ask about admissions?","Write to the admissions committee at admissions@fodmbcsacademy.com for direct guidance on entry and enrollment."]].map((q,i)=>`<details ${i?"":"open"}><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join("")}</div></div>`;
+/* views */
+const V={};
+V.home=()=>{const F=[CB["old-testament-survey"],CB["biblical-studies-diploma"],CB["christian-counselling-certification"]];
+ return `<section class="hero"><div class="bg"><img src="${IMG.hero}" alt=""></div><div class="wrap"><div>
+  <span class="eyebrow">Online Biblical & Theological Academy</span>
+  <h1>${words("Opening the Door to")} <em>${words("Biblical Knowledge",4)}</em></h1>
+  <p class="lead">Spiritual growth and Christian education worldwide, offered online by Faith Open Door Ministries Bible College & Seminary.</p>
+  <div class="cta"><a class="btn btn-gold" href="#/courses">Explore courses ${ic("arrow")}</a><a class="btn btn-ghost" href="#/enroll">Enroll now</a></div>
+  <div class="facts"><div><b>2016</b><span>Established</span></div><div><b>12</b><span>Online courses & programs</span></div><div><b>$20</b><span>CAD tuition from</span></div></div></div>
+  <div class="stack" aria-hidden="true">${F.map(c=>`<div class="bk"><div>${cover(c)}</div></div>`).join("")}
+   <div class="seal"><svg viewBox="0 0 200 200"><defs><path id="sc" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#sc">FAITH OPEN DOOR MINISTRIES · BIBLE COLLEGE & SEMINARY ·</textPath></text></svg><b>2016</b><small>EST.</small></div></div></div></section>
+ <div class="tick" aria-hidden="true"><div class="tt">${[0,1,2,3].map(()=>DISC.map(d=>`<span>${d[1]}</span><i></i>`).join("")).join("")}</div></div>
+ <section class="sec"><div class="wrap mgrid"><div><span class="eyebrow">Established 2016</span><p class="mission" id="mission" style="margin-top:22px">${"Affordable, accessible and attainable Biblical and Theological education worldwide.".split(" ").map((w,i)=>`<span class="mw ${i<3?"g":""}">${w}</span>`).join(" ")}</p></div>
+  <div><p class="lead" style="margin-bottom:34px">Since 2016 the academy has served students across the world through online study in Biblical Studies, Theology, Christian Counselling, Ministry and Leadership.</p><div class="stats">${[[2016,"Year established"],[12,"Courses & programs"],[3,"Levels of study"],[5,"Academic disciplines"]].map(s=>`<div><b data-count="${s[0]}">${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div></div></div></section>
+ <section class="sec v"><div class="wrap"><div class="head"><div><span class="eyebrow">Academic disciplines</span>${h2("Foundations of","Christian study")}</div><p class="lead">Structured online courses, certificates, certifications and diplomas for every stage of learning.</p></div>
+  <div class="disc">${DISC.map((d,i)=>`<a class="dc" href="#/courses" data-r style="--d:${i}"><span class="gl">${ic(d[3])}</span><small>${d[0]}</small><h3>${d[1]}</h3><p>${d[2]}</p></a>`).join("")}</div></div></section>
+ <section class="sec"><div class="wrap"><div class="head"><div><span class="eyebrow">Programs & tuition</span>${h2("Three levels,","one calling")}</div><p class="lead">Clear starting fees in Canadian dollars. Final tuition for a specific course is shown on its course page.</p></div>${tiers()}</div></section>
+ <section class="sec v"><div class="wrap"><div class="head"><div><span class="eyebrow">Course catalogue</span>${h2("Begin with","God’s Word")}</div><a class="btn btn-line" href="#/courses">All 12 courses ${ic("arrow")}</a></div>
+  <div class="grid">${["biblical-study-foundations","old-testament-survey","new-testament-survey","the-person-power-and-ministry-of-the-holy-spirit","biblical-studies-diploma","christian-ministry-diploma","christian-counselling-certification","ministry-leadership-certification"].map((id,i)=>card(CB[id],i)).join("")}</div></div></section>
+ <section class="sec"><div class="wrap split"><div class="ph mask"><img src="${IMG.laptop}" alt="Student studying online with a Bible and laptop" loading="lazy"><div class="badge"><span class="gl">${ic("globe")}</span><span><b>Study from anywhere</b><small>Laptop, tablet or phone</small></span></div></div>
+  <div><span class="eyebrow">Online learning</span>${h2("A classroom that","fits your life")}<p class="lead">Our virtual classroom gives every student a flexible digital path through Biblical and Theological study, with lectures, reading materials, and assessments available from any connected device.</p>
+  <div class="feat">${[["clock","Self-paced study","Move through each course at a pace that fits your work, ministry, and family commitments."],["screen","Digital lecture materials","Access structured lectures, reading materials, and guided assignments in one organized space."],["globe","Worldwide access","Connect from wherever you live using a laptop, tablet, or phone with an internet connection."]].map((f,i)=>`<div data-r style="--d:${i}"><span class="gl">${ic(f[0])}</span><span><b>${f[1]}</b><p>${f[2]}</p></span></div>`).join("")}</div></div></div></section>
+ <section class="sec dark"><div class="wrap quote" data-r><div class="mk">“</div><blockquote>Opening the Door to Biblical Knowledge, Spiritual Growth and <em>Christian Education Worldwide.</em></blockquote><div class="by"><span class="av">JR</span><span><b>Bishop Dr. James A. Robinson, CD</b><span>Founder and President</span></span></div><div style="margin-top:34px"><a class="btn btn-ghost btn-sm" href="#/president">Read the President’s message ${ic("arrow")}</a></div></div></section>
+ <section class="sec"><div class="wrap"><div class="head"><div><span class="eyebrow">Admissions</span>${h2("From inquiry to","course access")}</div><p class="lead">Admissions welcome adult learners and ministry workers from around the world.</p></div>${steps()}</div></section>
+ <section class="sec v" style="padding-top:110px"><div class="wrap"><div class="head"><div><span class="eyebrow">Tuition & payments</span>${h2("Transparent tuition,","protected payments")}</div></div>${payBlock()}</div></section>
+ ${ctaBand()}`};
+V.about=()=>`${pageHead("About us","About the academy","Faith Open Door Ministries","Bible College & Seminary","FODMBCS Global Online Biblical & Theological Academy is operated under the oversight of Faith Open Door Ministries Bible College & Seminary, offering structured Christian education to students worldwide.")}
+ <section class="sec"><div class="wrap split"><div class="ph mask"><img src="${IMG.reader}" alt="A reader studying the Bible at a desk" loading="lazy"></div><div><span class="eyebrow">Established 2016</span>${h2("A heritage of","sound teaching")}<p class="lead" style="margin-bottom:16px">Founded in 2016, the academy was built to make Biblical and Theological education affordable, accessible and attainable worldwide. Its teaching is grounded in sound doctrine, spiritual maturity and practical Christian leadership.</p><p class="lead">Each course is designed to deepen a student's knowledge of Scripture while equipping them for faithful service in their church, community and calling.</p><div style="margin-top:30px"><a class="btn btn-ink" href="#/president">President’s message ${ic("arrow")}</a></div></div></div></section>
+ <section class="sec v"><div class="wrap"><div class="head"><div><span class="eyebrow">Governance & standing</span>${h2("Academic governance","and accreditation")}</div></div><div class="cards3">${[["shield","Sound doctrine","Courses are shaped by a commitment to faithful, carefully taught Biblical and Theological content."],["cert","Accreditation framework","Information on the academy's accreditation and recognition is provided transparently to prospective students."],["mail","Admissions contact",`Reach the admissions office at <a class="link" href="mailto:${MAIL}">${MAIL}</a> for questions about standing and enrollment.`]].map((c,i)=>`<div class="card3" data-r style="--d:${i}"><span class="gl">${ic(c[0])}</span><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join("")}</div></div></section>${ctaBand()}`;
+V.president=()=>`${pageHead("President’s message","A personal welcome","President’s","Message","A welcome from the Academy’s leadership on the vision for Biblical and Theological education worldwide.")}
+ <section class="sec"><div class="wrap split" style="align-items:start"><div><span class="eyebrow">From the Founder and President</span>${h2("A welcome from","Bishop Dr. James A. Robinson, CD")}</div><div class="prose" data-r><p style="font:500 28px/1.35 var(--serif);color:var(--ink)">Welcome to FODMBCS Global Online Biblical & Theological Academy. Our purpose is to equip believers with deep scriptural grounding for effective ministry, and to foster spiritual growth and accessible theological literacy across all nations.</p><p>We believe Biblical and Theological education should be affordable, accessible and attainable for students wherever they live. We invite you to explore our courses and take the next step in your study of God’s Word.</p><div style="margin-top:28px"><a class="btn btn-ink" href="#/courses">Explore courses ${ic("arrow")}</a></div></div></div></section>
+ <section class="sec dark"><div class="wrap quote" data-r><div class="mk">“</div><blockquote>Opening the Door to Biblical Knowledge, Spiritual Growth and <em>Christian Education Worldwide.</em></blockquote><div class="by"><span class="av">JR</span><span><b>Bishop Dr. James A. Robinson, CD</b><span>Founder and President</span></span></div></div></section>${ctaBand()}`;
+V.courses=(q)=>{const l=(q.get("l")||"all");return `${pageHead("Courses","Course catalogue","Courses, diplomas &","certifications","Twelve online programs in Biblical Studies, Theology, Christian Counselling, Ministry and Leadership. Tuition in Canadian dollars.")}
+ <section class="sec" style="padding-top:70px"><div class="wrap"><div class="head" style="margin-bottom:44px"><div class="filters" role="tablist">${[["all","All courses"],["i","Introductory"],["d","Diplomas"],["c","Certifications"]].map(f=>`<a class="chip ${l===f[0]?"on":""}" href="#/courses${f[0]==="all"?"":"?l="+f[0]}">${f[1]}<small>${f[0]==="all"?COURSES.length:COURSES.filter(c=>c.l===f[0]).length}</small></a>`).join("")}</div><label style="font-size:14px;color:var(--mute)">Sort <select id="sort" style="margin-left:6px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:#fff"><option value="d">Default</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="az">Name A–Z</option></select></label></div><div class="grid" id="cgrid"></div></div></section>${ctaBand()}`};
+function renderGrid(){const g=$("#cgrid");if(!g)return;const q=new URLSearchParams((location.hash.split("?")[1]||""));const l=q.get("l");let L=COURSES.filter(c=>!l||c.l===l);const s=$("#sort").value;if(s==="lo")L=[...L].sort((a,b)=>a.p-b.p);if(s==="hi")L=[...L].sort((a,b)=>b.p-a.p);if(s==="az")L=[...L].sort((a,b)=>a.t.localeCompare(b.t));g.innerHTML=L.map(card).join("");syncCart();g.querySelectorAll("[data-r]").forEach(e=>e.classList.add("in"))}
+V.course=id=>{const c=CB[id];if(!c)return null;const rel=COURSES.filter(x=>x.l===c.l&&x!==c).slice(0,3);const rel2=rel.length?rel:COURSES.filter(x=>x!==c).slice(0,3);
+ return `<div class="wrap"><div class="cd"><div class="bw">${cover(c)}</div><div><div class="crumb" style="color:var(--mute)"><a href="#/">Home</a> / <a href="#/courses">Courses</a> / ${esc(c.short||c.t)}</div><span class="eyebrow lvl-${c.l}" style="margin-top:18px">${LV[c.l].n}</span><h1>${esc(c.t)}</h1><p class="lead">${esc(c.d)}</p>
+ <div class="pr"><b>$${c.p}</b><span>CAD tuition</span></div>
+ <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px"><button class="add" data-add="${c.id}" style="min-height:54px;padding:0 26px;font-size:15px"></button><a class="btn btn-line" href="#/enroll" data-enroll="${c.id}">Enroll in this course</a></div>
+ <ul class="inc">${c.inc.map(x=>`<li>${ic("check")}<span>${esc(x)}</span></li>`).join("")}<li>${ic("globe")}<span>100% online, study from any connected device</span></li><li>${ic("clock")}<span>Study at a pace that suits your schedule</span></li></ul>
+ <div class="note"><b>How enrollment works:</b> tuition is paid by Interac e-Transfer. Your course access is activated once our administration office has received and verified your payment. Questions? <a class="link" href="mailto:${MAIL}">${MAIL}</a></div></div></div></div>
+ <section class="sec v" style="margin-top:60px"><div class="wrap"><div class="head"><div><span class="eyebrow">Continue your study</span>${h2("You may also","like")}</div></div><div class="grid">${rel2.map(card).join("")}</div></div></section>`};
+V.admissions=()=>`${pageHead("Admissions","Open enrollment","Begin your Biblical and","Theological study","Admissions welcome adult learners and ministry workers from around the world. Review the steps below to move from inquiry to course access.")}
+ <section class="sec"><div class="wrap"><div class="head"><div><span class="eyebrow">Enrollment pathway</span>${h2("From inquiry to","course access")}</div></div>${steps()}</div></section>
+ <section class="sec v"><div class="wrap split" style="align-items:center"><div><span class="eyebrow">Questions before you apply?</span>${h2("Talk to the","admissions committee")}<p class="lead">Write to the admissions committee at ${MAIL} for direct guidance on entry and enrollment.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px"><a class="btn btn-ink" href="mailto:${MAIL}">${ic("mail")} Contact admissions</a><a class="btn btn-line" href="#/enroll">Request enrollment</a></div></div><div class="ph mask" style="aspect-ratio:4/3.4"><img src="${IMG.bible}" alt="An open Bible on a wooden desk" loading="lazy"></div></div></section>${ctaBand()}`;
+V.learning=()=>`${pageHead("Online learning","Study from anywhere","Online learning designed for","your schedule","Our virtual classroom gives every student a flexible digital path through Biblical and Theological study, with lectures, reading materials, and assessments available from any connected device.")}
+ <section class="sec"><div class="wrap"><div class="head"><div><span class="eyebrow">A flexible digital classroom</span>${h2("Everything you need,","in one place")}</div></div><div class="cards3">${[["clock","Self-paced study","Move through each course at a pace that fits your work, ministry, and family commitments."],["screen","Digital lecture materials","Access structured lectures, reading materials, and guided assignments in one organized space."],["globe","Worldwide access","Connect from wherever you live using a laptop, tablet, or phone with an internet connection."]].map((c,i)=>`<div class="card3" data-r style="--d:${i}"><span class="gl">${ic(c[0])}</span><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join("")}</div></div></section>
+ <section class="sec v"><div class="wrap split"><div class="ph mask"><img src="${IMG.laptop}" alt="Adult learner studying theology online" loading="lazy"></div><div><span class="eyebrow">Adult learners</span>${h2("Study theology","from anywhere")}<p class="lead">Working pastors, ministry volunteers, and busy professionals can pursue structured theological education around their daily responsibilities. Each course offers guided materials and assessments, with faculty support available through the student portal.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px"><a class="btn btn-ink" href="#/courses">Explore courses ${ic("arrow")}</a><a class="btn btn-line" href="${WP}/dashboard/">Student dashboard</a></div></div></div></section>${ctaBand()}`;
+V.tuition=()=>`${pageHead("Tuition & payments","Tuition & payments","Transparent tuition,","protected payments","Clear starting fees for introductory courses, diplomas and certifications, with simple tuition payment by Interac e-Transfer.")}
+ <section class="sec"><div class="wrap"><div class="head"><div><span class="eyebrow">Starting tuition in Canadian dollars</span>${h2("Choose your","level")}</div><p class="lead">Each tier lists its starting fee. Final tuition for a specific course is shown on its course page.</p></div>${tiers()}</div></section>
+ <section class="sec v"><div class="wrap">${payBlock()}</div></section>${ctaBand()}`;
+V.enroll=()=>{const sel=CART.length?CART:[];return `${pageHead("Enroll","Student enrollment","Request your","enrollment","Choose your courses and send your request to the admissions office. You will receive the Interac e-Transfer details and next steps by email.")}
+ <section class="sec" style="padding-top:70px"><div class="wrap split" style="align-items:start"><form class="panel form" id="enrollForm" novalidate><h3 style="font-size:34px">Your details</h3><div class="row2">${fld("fn","First name",1)}${fld("ln","Last name",1)}</div>${fld("em","Email",1,"email")}${fld("co","Country",1)}
+  <div class="fld"><label>Courses</label><div style="display:grid;gap:8px;max-height:320px;overflow:auto;padding:4px">${COURSES.map(c=>`<label style="display:flex;gap:12px;align-items:center;font-weight:500;font-size:15px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);cursor:pointer"><input type="checkbox" name="c" value="${c.id}" ${sel.includes(c.id)?"checked":""} style="accent-color:var(--ink);width:18px;height:18px"><span style="flex:1">${esc(c.t)}</span><b>$${c.p}</b></label>`).join("")}</div></div>
+  <div class="fld"><label for="f-msg">Message (optional)</label><textarea id="f-msg" name="msg" rows="3"></textarea></div>
+  <button class="btn btn-ink" type="submit" style="justify-content:center">Send enrollment request ${ic("arrow")}</button><small style="color:var(--mute)">Opens your email app with the request addressed to ${MAIL}. Already have an account? <a class="link" href="${WP}/my-account-2/">Log in</a></small></form>
+ <div><span class="eyebrow">What happens next</span>${h2("Three simple","steps")}<div class="feat">${[["mail","Admissions replies","You receive the payment details for your chosen courses."],["shield","Pay by Interac e-Transfer","Send your tuition in Canadian dollars."],["cert","Start learning","Access is activated once your payment is received and verified."]].map((f,i)=>`<div data-r style="--d:${i}"><span class="gl">${ic(f[0])}</span><span><b>${f[1]}</b><p>${f[2]}</p></span></div>`).join("")}</div><div class="note">Prefer to create your student account first? <a class="link" href="${WP}/student-registration-2/">Create a student account</a></div></div></div></section>`};
+V.nf=()=>`<section class="sec"><div class="wrap" style="text-align:center"><span class="eyebrow">404</span>${h2("This page could not be","found")}<a class="btn btn-ink" href="#/">Back to home</a></div></section>`;
+function fld(n,l,req,type="text"){return `<div class="fld"><label for="f-${n}">${l}</label><input id="f-${n}" name="${n}" type="${type}" ${req?"required":""}><div class="msg">${type==="email"?"Please enter a valid email":"Required"}</div></div>`}
+/* chrome */
+const NAV=[["#/","Home"],["#/about","About"],["#/president","President’s Message"],["#/courses","Courses"],["#/admissions","Admissions"],["#/learning","Online Learning"],["#/tuition","Tuition"]];
+$("#nav").innerHTML=NAV.map(n=>`<a href="${n[0]}">${n[1]}</a>`).join("");
+$("#sheet").innerHTML=NAV.concat([["#/enroll","Enroll now"]]).map((n,i)=>`<a href="${n[0]}" style="--i:${i}">${n[1]}</a>`).join("")+`<small>${MAIL}<br>76 Samandria Ave, Whitby, Ontario L1R 3G5, Canada</small>`;
+$("#ftr").innerHTML=`<div class="wrap"><div class="big"><h2>Opening the door to <em>Biblical knowledge.</em></h2><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-gold" href="#/enroll">Enroll now ${ic("arrow")}</a><a class="btn btn-ghost" href="mailto:${MAIL}">Contact admissions</a></div></div>
+ <div class="cols"><div><span class="logo"><img src="${IMG.logo}" alt="FODMBCS Academy"></span><p>Affordable, accessible and attainable Biblical and Theological education worldwide, since 2016.</p></div>
+ <div><h4>Academy</h4>${NAV.slice(1).map(n=>`<a href="${n[0]}">${n[1]}</a>`).join("")}</div>
+ <div><h4>Student area</h4><a href="${WP}/student-registration-2/">Create a student account</a><a href="${WP}/dashboard/">Student dashboard</a><a href="${WP}/my-certificates/">My certificates & transcript</a><a href="${WP}/verify-certificate/">Verify a certificate</a><a href="${WP}/my-account-2/">Login</a></div>
+ <div><h4>Contact</h4><a href="mailto:${MAIL}">${MAIL}</a><address style="margin-top:10px">Mailing address<br>76 Samandria Ave<br>Whitby, Ontario L1R 3G5<br>Canada</address></div></div></div>
+ <div class="mark" aria-hidden="true">${[0,1,2,3].map(()=>`<span>FODMBCS Academy ·</span>`).join("")}</div>
+ <div class="wrap bot"><span>© ${new Date().getFullYear()} FODMBCS Global Online Biblical & Theological Academy. All rights reserved.</span><span><a href="${WP}/privacy-policy/">Privacy Policy</a> · <a href="${WP}/terms-of-use/">Terms of Use</a> · <a href="${WP}/refund-policy/">Refund Policy</a></span></div>`;
+/* router */
+function route(){const h=(location.hash||"#/").slice(1);const [p,qs]=h.split("?");const seg=p.split("/").filter(Boolean);const q=new URLSearchParams(qs||"");let html;
+ if(!seg.length)html=V.home();else if(seg[0]==="course")html=V.course(seg[1]);else if(V[seg[0]])html=V[seg[0]](q);
+ if(!html)html=V.nf();closeD();document.body.classList.remove("menu");
+ $("#main").innerHTML=`<div class="view">${html}</div>`;scrollTo(0,0);
+ $$("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#/"+(seg[0]||"")||(!seg.length&&a.getAttribute("href")==="#/")||(seg[0]==="course"&&a.getAttribute("href")==="#/courses")));
+ const c=seg[0]==="course"&&CB[seg[1]];document.title=(c?c.t+" | ":seg[0]?(NAV.find(n=>n[0]==="#/"+seg[0])||["",seg[0][0].toUpperCase()+seg[0].slice(1)])[1]+" | ":"")+"FODMBCS Global Online Biblical & Theological Academy";
+ renderGrid();syncCart();reveal()}
+let IO;
+function reveal(){if(IO)IO.disconnect();const els=$$("[data-r],.wr,.mask,[data-count]");if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){els.forEach(e=>e.classList.add("in"));return}
+ IO=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const e=en.target;e.classList.add("in");IO.unobserve(e);if(e.dataset.count){const to=+e.dataset.count,from=to>1000?to-60:0,t0=performance.now();const f=n=>{const k=Math.min(1,(n-t0)/1500);e.textContent=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}}),{rootMargin:"0px 0px -6% 0px",threshold:.05});els.forEach(e=>IO.observe(e))}
+/* events */
+document.addEventListener("click",e=>{const el=e.target.closest("a,button");if(!el)return;
+ if(el.dataset.add){e.preventDefault();const was=inCart(el.dataset.add);toggleCart(el.dataset.add);toast(was?"Removed from your enrollment":"Added to your enrollment");return}
+ if(el.dataset.rm){toggleCart(el.dataset.rm);return}
+ if(el.dataset.enroll&&!inCart(el.dataset.enroll)){CART.push(el.dataset.enroll);store.set("fod_cart",CART);syncCart()}
+ if(el.id==="cartBtn"){openD();return}
+ if(el.id==="dClose"||el.id==="scrim"){closeD();return}
+ if(el.id==="burger"){document.body.classList.toggle("menu");return}});
+$("#scrim").addEventListener("click",closeD);
+document.addEventListener("change",e=>{if(e.target.id==="sort")renderGrid()});
+document.addEventListener("submit",e=>{e.preventDefault();const f=e.target;if(f.id!=="enrollForm")return;let ok=true;$$("input[required]",f).forEach(i=>{let g=!!i.value.trim();if(g&&i.type==="email")g=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(i.value);i.closest(".fld").classList.toggle("err",!g);if(!g)ok=false});
+ const cs=$$('input[name="c"]:checked',f).map(i=>CB[i.value]);if(!cs.length){toast("Please choose at least one course");return}if(!ok){toast("Please check the highlighted fields");return}
+ const d=Object.fromEntries(new FormData(f));const body=`Hello Admissions,\n\nI would like to enroll in:\n${cs.map(c=>"- "+c.t+" ($"+c.p+" CAD)").join("\n")}\nTotal: $${cs.reduce((s,c)=>s+c.p,0)} CAD\n\nName: ${d.fn} ${d.ln}\nEmail: ${d.em}\nCountry: ${d.co}\n${d.msg?"\nMessage: "+d.msg+"\n":""}\nPlease send me the Interac e-Transfer details.\n`;
+ location.href=`mailto:${MAIL}?subject=${encodeURIComponent("Enrollment request: "+d.fn+" "+d.ln)}&body=${encodeURIComponent(body)}`;toast("Your email app is opening with the request")});
+let LY=0;addEventListener("scroll",()=>{const y=scrollY;document.body.classList.toggle("scrolled",y>40);document.body.classList.toggle("away",y>300&&y>LY&&!document.body.classList.contains("menu"));LY=y;
+ const m=$("#mission");if(m){const r=m.getBoundingClientRect();const k=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height+innerHeight*.35)));const W=$$(".mw",m);const n=Math.round(k*W.length);W.forEach((w,i)=>w.classList.toggle("on",i<n))}},{passive:true});
+addEventListener("hashchange",route);
+addEventListener("keydown",e=>{if(e.key==="Escape"){closeD();document.body.classList.remove("menu")}});
+route();
+</script>
+</body>
+</html>
