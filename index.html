@@ -402,6 +402,64 @@ body.menu .sheet a{opacity:1;transform:none}
 .lock{max-width:640px;background:#fff;border-radius:var(--r);padding:44px;box-shadow:0 0 0 1px var(--line);text-align:center;margin:30px auto}
 .lock .gl{width:70px;height:70px;border-radius:50%;background:var(--vellum2);color:var(--navy);display:grid;place-items:center;margin:0 auto 20px}
 @media(max-width:900px){.learn{grid-template-columns:1fr}.learn aside{border-right:0;border-bottom:1px solid var(--line);max-height:300px}}
+
+/* ===== v2 motion: 3D, scroll-driven, smooth ===== */
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}
+.prog{position:fixed;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));transform-origin:0 50%;transform:scaleX(0);z-index:200;pointer-events:none}
+.curtain{position:fixed;inset:0;z-index:150;pointer-events:none;background:var(--ink);transform:translateY(100%)}
+.curtain:after{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--gold)}
+.curtain.cover{transform:none;transition:none}
+.curtain.off{transform:translateY(-100%);transition:transform .9s cubic-bezier(.76,0,.24,1)}
+.curtain b{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:italic 600 clamp(40px,6vw,80px) var(--serif);color:var(--gold2);white-space:nowrap;opacity:.9}
+/* 3D reveal */
+[data-r]{transform:perspective(1200px) translateY(46px) rotateX(14deg);transform-origin:50% 100%}
+[data-r].in{transform:none}
+.tilt{transform-style:preserve-3d;will-change:transform}
+.tilt .glare{position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.35),transparent 55%);opacity:0;transition:opacity .4s;z-index:3;mix-blend-mode:soft-light}
+.tilt:hover .glare{opacity:1}
+.tier,.step,.card3,.cc .bw,.kpi{transform-style:preserve-3d;position:relative}
+.tier.tilting,.step.tilting,.card3.tilting,.cc .bw.tilting{transition:transform .12s linear,box-shadow .5s!important}
+/* parallax imgs */
+[data-par]{overflow:hidden}
+[data-par] img{will-change:transform;height:118%!important;margin-top:-9%}
+/* hero 3D */
+.stack{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s var(--ease)}
+.hero .wrap>div:first-child{will-change:transform,opacity}
+.hero .orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;pointer-events:none}
+.hero .orb.a{width:420px;height:420px;background:#2C4BB0;left:-120px;top:20%;animation:orb 14s ease-in-out infinite alternate}
+.hero .orb.b{width:360px;height:360px;background:#B88A2A;right:10%;bottom:-140px;animation:orb 18s ease-in-out infinite alternate-reverse}
+@keyframes orb{to{transform:translate(80px,-60px) scale(1.15)}}
+.dust{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold2);opacity:0;animation:dust linear infinite}
+@keyframes dust{0%{opacity:0;transform:translateY(0)}15%{opacity:.8}100%{opacity:0;transform:translateY(-260px) translateX(40px)}}
+/* 3D library carousel */
+.lib{position:relative;height:420vh;background:var(--ink);color:#C9D0E4}
+.lib-st{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;padding:110px 0 46px}
+.lib-st:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 62%,rgba(229,196,111,.16),transparent 55%)}
+.lib-head{position:relative;z-index:2;text-align:center}
+.lib-head .h2{color:#fff;margin:12px 0 0}
+.stage{position:relative;perspective:1600px;display:grid;place-items:center}
+.ring{position:relative;width:200px;height:280px;transform-style:preserve-3d;transform:translateZ(calc(var(--R)*-1)) rotateX(-6deg) rotateY(var(--rot,0deg))}
+.rb{position:absolute;inset:0;transform-style:preserve-3d;transition:filter .4s}
+.rb .book{width:200px;box-shadow:0 40px 60px -30px rgba(0,0,0,.8)}
+.rb.dim{filter:brightness(.45) saturate(.7)}
+.lib-floor{position:absolute;left:50%;bottom:16%;width:min(900px,90vw);height:120px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(229,196,111,.22),transparent 65%);filter:blur(10px)}
+.lib-info{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.lib-info .t{font:500 clamp(28px,3.4vw,46px)/1.05 var(--serif);color:#fff;max-width:22ch;min-height:2.1em}
+.lib-info .m{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px;font-weight:600}
+.lib-bar{position:relative;z-index:2;height:2px;background:rgba(255,255,255,.12);margin-top:26px;border-radius:2px}
+.lib-bar i{position:absolute;left:0;top:0;bottom:0;background:var(--gold);width:0;border-radius:2px}
+.lib-count{font:600 64px/1 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(229,196,111,.6)}
+@media(max-width:760px){.lib{height:360vh}.ring{width:150px;height:210px}.rb .book{width:150px}.lib-st{padding:90px 0 36px}}
+/* page head 3D rings */
+.ph-head:after{transform:rotateX(var(--phx,0deg)) rotateY(var(--phy,0deg))}
+/* cursor */
+.cur{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:1.5px solid var(--gold);pointer-events:none;z-index:300;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .3s,border-color .3s;mix-blend-mode:difference}
+.cur.big{width:70px;height:70px;margin:-35px 0 0 -35px;background:rgba(229,196,111,.25);border-color:transparent}
+@media(hover:none),(max-width:900px){.cur{display:none}}
+.tick .tt{animation:none}
+@media(prefers-reduced-motion:reduce){.lib{height:auto}.lib-st{position:relative;height:auto}.curtain,.cur,.dust{display:none}[data-r]{transform:none!important}}
+
 .view{animation:fade .7s var(--ease) both}
 .toTop{position:fixed;right:22px;bottom:22px;width:52px;height:52px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;z-index:60;box-shadow:var(--sh);transform:scale(0);transition:transform .5s var(--spring)}
 body.scrolled .toTop{transform:none}
@@ -411,6 +469,7 @@ body.scrolled .toTop{transform:none}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="prog" id="prog"></div><div class="curtain" id="curtain"><b>FODMBCS</b></div><div class="cur" id="cur"></div>
 <div class="top"><div class="wrap"><span>Admissions open worldwide · Tuition from $20 CAD</span><div class="r"><a href="mailto:admissions@fodmbcsacademy.com">admissions@fodmbcsacademy.com</a><a href="#/account">Student login</a></div></div></div>
 <header class="hdr"><div class="wrap">
  <a class="brand" href="#/" aria-label="FODMBCS Academy home"><img src="img/logo.webp" alt="FODMBCS Global Online Biblical & Theological Academy"></a>
@@ -489,13 +548,13 @@ const payBlock=()=>`<div class="pay"><div class="paybox" data-r><span class="eye
 /* views */
 const V={};
 V.home=()=>{const F=[CB["old-testament-survey"],CB["biblical-studies-diploma"],CB["christian-counselling-certification"]];
- return `<section class="hero"><div class="bg"><img src="${IMG.hero}" alt=""></div><div class="wrap"><div>
+ return `<section class="hero" id="hero"><div class="bg" id="heroBg"><img src="${IMG.hero}" alt=""></div><span class="orb a"></span><span class="orb b"></span><div class="dust">${Array.from({length:26},(_,i)=>`<i style="left:${(i*37)%100}%;top:${40+(i*53)%60}%;animation-duration:${6+(i%5)*2}s;animation-delay:-${(i*1.7)%9}s"></i>`).join("")}</div><div class="wrap"><div>
   <span class="eyebrow">Online Biblical & Theological Academy</span>
   <h1>${words("Opening the Door to")} <em>${words("Biblical Knowledge",4)}</em></h1>
   <p class="lead">Spiritual growth and Christian education worldwide, offered online by Faith Open Door Ministries Bible College & Seminary.</p>
   <div class="cta"><a class="btn btn-gold" href="#/courses">Explore courses ${ic("arrow")}</a><a class="btn btn-ghost" href="#/register">Enroll now</a></div>
   <div class="facts"><div><b>2016</b><span>Established</span></div><div><b>12</b><span>Online courses & programs</span></div><div><b>$20</b><span>CAD tuition from</span></div></div></div>
-  <div class="stack" aria-hidden="true">${F.map(c=>`<div class="bk"><div>${cover(c)}</div></div>`).join("")}
+  <div class="stack" id="stack" aria-hidden="true">${F.map(c=>`<div class="bk"><div>${cover(c)}</div></div>`).join("")}
    <div class="seal"><svg viewBox="0 0 200 200"><defs><path id="sc" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#sc">FAITH OPEN DOOR MINISTRIES · BIBLE COLLEGE & SEMINARY ·</textPath></text></svg><b>2016</b><small>EST.</small></div></div></div></section>
  <div class="tick" aria-hidden="true"><div class="tt">${[0,1,2,3].map(()=>DISC.map(d=>`<span>${d[1]}</span><i></i>`).join("")).join("")}</div></div>
  <section class="sec"><div class="wrap mgrid"><div><span class="eyebrow">Established 2016</span><p class="mission" id="mission" style="margin-top:22px">${"Affordable, accessible and attainable Biblical and Theological education worldwide.".split(" ").map((w,i)=>`<span class="mw ${i<3?"g":""}">${w}</span>`).join(" ")}</p></div>
@@ -503,9 +562,12 @@ V.home=()=>{const F=[CB["old-testament-survey"],CB["biblical-studies-diploma"],C
  <section class="sec v"><div class="wrap"><div class="head"><div><span class="eyebrow">Academic disciplines</span>${h2("Foundations of","Christian study")}</div><p class="lead">Structured online courses, certificates, certifications and diplomas for every stage of learning.</p></div>
   <div class="disc">${DISC.map((d,i)=>`<a class="dc" href="#/courses" data-r style="--d:${i}"><span class="gl">${ic(d[3])}</span><small>${d[0]}</small><h3>${d[1]}</h3><p>${d[2]}</p></a>`).join("")}</div></div></section>
  <section class="sec"><div class="wrap"><div class="head"><div><span class="eyebrow">Programs & tuition</span>${h2("Three levels,","one calling")}</div><p class="lead">Clear starting fees in Canadian dollars. Final tuition for a specific course is shown on its course page.</p></div>${tiers()}</div></section>
+ <section class="lib" id="lib"><div class="lib-st"><div class="wrap lib-head"><span class="eyebrow" style="color:var(--gold2)">The library</span><h2 class="h2">Twelve courses, <em>one library</em></h2></div>
+  <div class="stage"><div class="lib-floor"></div><div class="ring" id="ring">${COURSES.map((c,i)=>`<a class="rb" href="#/course/${c.id}" style="transform:rotateY(${i*30}deg) translateZ(var(--R))" aria-label="${esc(c.t)}">${cover(c)}</a>`).join("")}</div></div>
+  <div class="wrap"><div class="lib-info"><div><div class="m" id="libM">Introductory · $20 CAD</div><div class="t" id="libT">${esc(COURSES[0].t)}</div></div><div style="display:flex;align-items:center;gap:22px"><span class="lib-count" id="libN">01</span><a class="btn btn-gold btn-sm" id="libA" href="#/course/${COURSES[0].id}">View course ${ic("arrow")}</a></div></div><div class="lib-bar"><i id="libBar"></i></div></div></div></section>
  <section class="sec v"><div class="wrap"><div class="head"><div><span class="eyebrow">Course catalogue</span>${h2("Begin with","God’s Word")}</div><a class="btn btn-line" href="#/courses">All 12 courses ${ic("arrow")}</a></div>
   <div class="grid">${["biblical-study-foundations","old-testament-survey","new-testament-survey","the-person-power-and-ministry-of-the-holy-spirit","biblical-studies-diploma","christian-ministry-diploma","christian-counselling-certification","ministry-leadership-certification"].map((id,i)=>card(CB[id],i)).join("")}</div></div></section>
- <section class="sec"><div class="wrap split"><div class="ph mask"><img src="${IMG.laptop}" alt="Student studying online with a Bible and laptop" loading="lazy"><div class="badge"><span class="gl">${ic("globe")}</span><span><b>Study from anywhere</b><small>Laptop, tablet or phone</small></span></div></div>
+ <section class="sec"><div class="wrap split"><div class="ph mask" data-par><img src="${IMG.laptop}" alt="Student studying online with a Bible and laptop" loading="lazy"><div class="badge"><span class="gl">${ic("globe")}</span><span><b>Study from anywhere</b><small>Laptop, tablet or phone</small></span></div></div>
   <div><span class="eyebrow">Online learning</span>${h2("A classroom that","fits your life")}<p class="lead">Our virtual classroom gives every student a flexible digital path through Biblical and Theological study, with lectures, reading materials, and assessments available from any connected device.</p>
   <div class="feat">${[["clock","Self-paced study","Move through each course at a pace that fits your work, ministry, and family commitments."],["screen","Digital lecture materials","Access structured lectures, reading materials, and guided assignments in one organized space."],["globe","Worldwide access","Connect from wherever you live using a laptop, tablet, or phone with an internet connection."]].map((f,i)=>`<div data-r style="--d:${i}"><span class="gl">${ic(f[0])}</span><span><b>${f[1]}</b><p>${f[2]}</p></span></div>`).join("")}</div></div></div></section>
  <section class="sec dark"><div class="wrap quote" data-r><div class="mk">“</div><blockquote>Opening the Door to Biblical Knowledge, Spiritual Growth and <em>Christian Education Worldwide.</em></blockquote><div class="by"><span class="av">JR</span><span><b>Bishop Dr. James A. Robinson, CD</b><span>Founder and President</span></span></div><div style="margin-top:34px"><a class="btn btn-ghost btn-sm" href="#/president">Read the President’s message ${ic("arrow")}</a></div></div></section>
@@ -513,7 +575,7 @@ V.home=()=>{const F=[CB["old-testament-survey"],CB["biblical-studies-diploma"],C
  <section class="sec v" style="padding-top:110px"><div class="wrap"><div class="head"><div><span class="eyebrow">Tuition & payments</span>${h2("Transparent tuition,","protected payments")}</div></div>${payBlock()}</div></section>
  ${ctaBand()}`};
 V.about=()=>`${pageHead("About us","About the academy","Faith Open Door Ministries","Bible College & Seminary","FODMBCS Global Online Biblical & Theological Academy is operated under the oversight of Faith Open Door Ministries Bible College & Seminary, offering structured Christian education to students worldwide.")}
- <section class="sec"><div class="wrap split"><div class="ph mask"><img src="${IMG.reader}" alt="A reader studying the Bible at a desk" loading="lazy"></div><div><span class="eyebrow">Established 2016</span>${h2("A heritage of","sound teaching")}<p class="lead" style="margin-bottom:16px">Founded in 2016, the academy was built to make Biblical and Theological education affordable, accessible and attainable worldwide. Its teaching is grounded in sound doctrine, spiritual maturity and practical Christian leadership.</p><p class="lead">Each course is designed to deepen a student's knowledge of Scripture while equipping them for faithful service in their church, community and calling.</p><div style="margin-top:30px"><a class="btn btn-ink" href="#/president">President’s message ${ic("arrow")}</a></div></div></div></section>
+ <section class="sec"><div class="wrap split"><div class="ph mask" data-par><img src="${IMG.reader}" alt="A reader studying the Bible at a desk" loading="lazy"></div><div><span class="eyebrow">Established 2016</span>${h2("A heritage of","sound teaching")}<p class="lead" style="margin-bottom:16px">Founded in 2016, the academy was built to make Biblical and Theological education affordable, accessible and attainable worldwide. Its teaching is grounded in sound doctrine, spiritual maturity and practical Christian leadership.</p><p class="lead">Each course is designed to deepen a student's knowledge of Scripture while equipping them for faithful service in their church, community and calling.</p><div style="margin-top:30px"><a class="btn btn-ink" href="#/president">President’s message ${ic("arrow")}</a></div></div></div></section>
  <section class="sec v"><div class="wrap"><div class="head"><div><span class="eyebrow">Governance & standing</span>${h2("Academic governance","and accreditation")}</div></div><div class="cards3">${[["shield","Sound doctrine","Courses are shaped by a commitment to faithful, carefully taught Biblical and Theological content."],["cert","Accreditation framework","Information on the academy's accreditation and recognition is provided transparently to prospective students."],["mail","Admissions contact",`Reach the admissions office at <a class="link" href="mailto:${MAIL}">${MAIL}</a> for questions about standing and enrollment.`]].map((c,i)=>`<div class="card3" data-r style="--d:${i}"><span class="gl">${ic(c[0])}</span><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join("")}</div></div></section>${ctaBand()}`;
 V.president=()=>`${pageHead("President’s message","A personal welcome","President’s","Message","A welcome from the Academy’s leadership on the vision for Biblical and Theological education worldwide.")}
  <section class="sec"><div class="wrap split" style="align-items:start"><div><span class="eyebrow">From the Founder and President</span>${h2("A welcome from","Bishop Dr. James A. Robinson, CD")}</div><div class="prose" data-r><p style="font:500 28px/1.35 var(--serif);color:var(--ink)">Welcome to FODMBCS Global Online Biblical & Theological Academy. Our purpose is to equip believers with deep scriptural grounding for effective ministry, and to foster spiritual growth and accessible theological literacy across all nations.</p><p>We believe Biblical and Theological education should be affordable, accessible and attainable for students wherever they live. We invite you to explore our courses and take the next step in your study of God’s Word.</p><div style="margin-top:28px"><a class="btn btn-ink" href="#/courses">Explore courses ${ic("arrow")}</a></div></div></div></section>
@@ -548,10 +610,10 @@ V.instructor=()=>`${pageHead("Instructor registration","Faculty","Instructor","r
 V.shop=q=>V.courses(q);
 V.admissions=()=>`${pageHead("Admissions","Open enrollment","Begin your Biblical and","Theological study","Admissions welcome adult learners and ministry workers from around the world. Review the steps below to move from inquiry to course access.")}
  <section class="sec"><div class="wrap"><div class="head"><div><span class="eyebrow">Enrollment pathway</span>${h2("From inquiry to","course access")}</div></div>${steps()}</div></section>
- <section class="sec v"><div class="wrap split" style="align-items:center"><div><span class="eyebrow">Questions before you apply?</span>${h2("Talk to the","admissions committee")}<p class="lead">Write to the admissions committee at ${MAIL} for direct guidance on entry and enrollment.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px"><a class="btn btn-ink" href="mailto:${MAIL}">${ic("mail")} Contact admissions</a><a class="btn btn-line" href="#/register">Request enrollment</a></div></div><div class="ph mask" style="aspect-ratio:4/3.4"><img src="${IMG.bible}" alt="An open Bible on a wooden desk" loading="lazy"></div></div></section>${ctaBand()}`;
+ <section class="sec v"><div class="wrap split" style="align-items:center"><div><span class="eyebrow">Questions before you apply?</span>${h2("Talk to the","admissions committee")}<p class="lead">Write to the admissions committee at ${MAIL} for direct guidance on entry and enrollment.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px"><a class="btn btn-ink" href="mailto:${MAIL}">${ic("mail")} Contact admissions</a><a class="btn btn-line" href="#/register">Request enrollment</a></div></div><div class="ph mask" data-par style="aspect-ratio:4/3.4"><img src="${IMG.bible}" alt="An open Bible on a wooden desk" loading="lazy"></div></div></section>${ctaBand()}`;
 V.learning=()=>`${pageHead("Online learning","Study from anywhere","Online learning designed for","your schedule","Our virtual classroom gives every student a flexible digital path through Biblical and Theological study, with lectures, reading materials, and assessments available from any connected device.")}
  <section class="sec"><div class="wrap"><div class="head"><div><span class="eyebrow">A flexible digital classroom</span>${h2("Everything you need,","in one place")}</div></div><div class="cards3">${[["clock","Self-paced study","Move through each course at a pace that fits your work, ministry, and family commitments."],["screen","Digital lecture materials","Access structured lectures, reading materials, and guided assignments in one organized space."],["globe","Worldwide access","Connect from wherever you live using a laptop, tablet, or phone with an internet connection."]].map((c,i)=>`<div class="card3" data-r style="--d:${i}"><span class="gl">${ic(c[0])}</span><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join("")}</div></div></section>
- <section class="sec v"><div class="wrap split"><div class="ph mask"><img src="${IMG.laptop}" alt="Adult learner studying theology online" loading="lazy"></div><div><span class="eyebrow">Adult learners</span>${h2("Study theology","from anywhere")}<p class="lead">Working pastors, ministry volunteers, and busy professionals can pursue structured theological education around their daily responsibilities. Each course offers guided materials and assessments, with faculty support available through the student portal.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px"><a class="btn btn-ink" href="#/courses">Explore courses ${ic("arrow")}</a><a class="btn btn-line" href="#/dashboard">Student dashboard</a></div></div></div></section>${ctaBand()}`;
+ <section class="sec v"><div class="wrap split"><div class="ph mask" data-par><img src="${IMG.laptop}" alt="Adult learner studying theology online" loading="lazy"></div><div><span class="eyebrow">Adult learners</span>${h2("Study theology","from anywhere")}<p class="lead">Working pastors, ministry volunteers, and busy professionals can pursue structured theological education around their daily responsibilities. Each course offers guided materials and assessments, with faculty support available through the student portal.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px"><a class="btn btn-ink" href="#/courses">Explore courses ${ic("arrow")}</a><a class="btn btn-line" href="#/dashboard">Student dashboard</a></div></div></div></section>${ctaBand()}`;
 V.tuition=()=>`${pageHead("Tuition & payments","Tuition & payments","Transparent tuition,","protected payments","Clear starting fees for introductory courses, diplomas and certifications, with simple tuition payment by Interac e-Transfer.")}
  <section class="sec"><div class="wrap"><div class="head"><div><span class="eyebrow">Starting tuition in Canadian dollars</span>${h2("Choose your","level")}</div><p class="lead">Each tier lists its starting fee. Final tuition for a specific course is shown on its course page.</p></div>${tiers()}</div></section>
  <section class="sec v"><div class="wrap">${payBlock()}</div></section>${ctaBand()}`;
@@ -660,7 +722,8 @@ function nav(h){const p=String(h).replace(/^#/,"")||"/";try{if(location.hash!=="
 function route(force){let hh="";try{hh=location.hash}catch(e){}const h=(typeof force==="string"?force:(hh?hh.slice(1):CUR))||"/";CUR=h;const [p,qs]=h.split("?");const seg=p.split("/").filter(Boolean);const q=new URLSearchParams(qs||"");let html;
  if(!seg.length)html=V.home();else if(seg[0]==="course")html=V.course(seg[1]);else if(seg[0]==="order")html=V.order(seg[1]);else if(V[seg[0]])html=V[seg[0]](q,seg);
  if(!html)html=V.nf();closeD();document.body.classList.remove("menu");
- $("#main").innerHTML=`<div class="view">${html}</div>`;scrollTo(0,0);
+ if(window.__routed){const cu=$("#curtain");cu.classList.remove("off");cu.classList.add("cover");void cu.offsetWidth;requestAnimationFrame(()=>{cu.classList.remove("cover");cu.classList.add("off")})}window.__routed=1;
+ $("#main").innerHTML=`<div class="view">${html}</div>`;if(window.LEN)LEN.scrollTo(0,{immediate:true});else scrollTo(0,0);
  $$("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#/"+(seg[0]||"")||(!seg.length&&a.getAttribute("href")==="#/")||(seg[0]==="course"&&a.getAttribute("href")==="#/courses")));
  const TT={learn:"Lesson",exam:"Final examination",instructor:"Instructor registration",shop:"Courses",cart:"Cart",checkout:"Checkout",account:"My account",register:"Student registration",dashboard:"Student dashboard",orders:"Orders",certificates:"My certificates & transcript",profile:"Profile",verify:"Verify a certificate",contact:"Contact",privacy:"Privacy Policy",terms:"Terms of Use",refund:"Refund Policy",order:"Order received"};const c=seg[0]==="course"&&CB[seg[1]];document.title=(c?c.t+" | ":seg[0]?(TT[seg[0]]||(NAV.find(n=>n[0]==="#/"+seg[0])||["",seg[0]])[1])+" | ":"")+"FODMBCS Global Online Biblical & Theological Academy";
  renderGrid();syncCart();reveal()}
@@ -697,6 +760,37 @@ let LY=0;addEventListener("scroll",()=>{const y=scrollY;document.body.classList.
  const m=$("#mission");if(m){const r=m.getBoundingClientRect();const k=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height+innerHeight*.35)));const W=$$(".mw",m);const n=Math.round(k*W.length);W.forEach((w,i)=>w.classList.toggle("on",i<n))}},{passive:true});
 addEventListener("hashchange",()=>{let h="";try{h=location.hash.slice(1)}catch(e){}if(h&&h!==CUR)route()});addEventListener("popstate",()=>route());
 addEventListener("keydown",e=>{if(e.key==="Escape"){closeD();document.body.classList.remove("menu")}});
+/* ===== motion engine ===== */
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let LEN=null;
+function startLenis(){if(RM||!window.Lenis)return;try{LEN=new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});window.LEN=LEN;const raf=t=>{LEN.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf)}catch(e){}}
+(function(){const sc=document.createElement("script");sc.src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js";sc.onload=startLenis;document.head.appendChild(sc)})();
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+let tickX=0,lastY=scrollY,vel=0;
+function frame(){const y=scrollY,H=innerHeight,doc=document.documentElement.scrollHeight-H;
+ vel+=((y-lastY)-vel)*.15;lastY=y;
+ $("#prog").style.transform=`scaleX(${doc>0?y/doc:0})`;
+ // hero exit
+ const hero=$("#hero");if(hero){const r=hero.getBoundingClientRect();const p=clamp(-r.top/r.height);const c=hero.querySelector(".wrap>div:first-child");if(c){c.style.transform=`translateY(${p*140}px)`;c.style.opacity=1-p*.9}const bg=$("#heroBg");if(bg)bg.style.transform=`translateY(${p*30}%) scale(${1+p*.1})`;const st=$("#stack");if(st)st.style.translate=`0 ${p*-120}px`}
+ // library ring
+ const lib=$("#lib");if(lib){const r=lib.getBoundingClientRect();const p=clamp(-r.top/(r.height-H));const n=COURSES.length;const rot=-p*(n-1)*30;const ring=$("#ring");const R=innerWidth<760?260:430;ring.style.setProperty("--R",R+"px");ring.style.setProperty("--rot",rot+"deg");const k=Math.round(p*(n-1));$$(".rb",ring).forEach((b,i)=>b.classList.toggle("dim",i!==k));if(lib._k!==k){lib._k=k;const c=COURSES[k];$("#libT").textContent=c.t;$("#libM").textContent=LV[c.l].s+" · $"+c.p+" CAD";$("#libN").textContent=String(k+1).padStart(2,"0");$("#libA").setAttribute("href","#/course/"+c.id)}$("#libBar").style.width=(p*100)+"%"}
+ // parallax
+ $$("[data-par]").forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom<0||r.top>H)return;const p=(r.top+r.height/2-H/2)/H;const im=el.querySelector("img");if(im&&el.classList.contains("in"))im.style.transform=`translateY(${p*-8}%)`});
+ // ticker by velocity
+ const tt=$(".tick .tt");if(tt){tickX-=(.6+Math.abs(vel)*.25);const w=tt.scrollWidth/4;if(-tickX>w)tickX+=w;tt.style.transform=`translateX(${tickX}px) skewX(${clamp(vel*-.3,-8,8)}deg)`}
+ const fm=$(".ftr .mark");if(fm){fm.style.animation="none";fm._x=(fm._x||0)-(.5+Math.abs(vel)*.2);const w=fm.scrollWidth/4;if(-fm._x>w)fm._x+=w;fm.style.transform=`translateX(${fm._x}px)`}
+ const ph=$(".ph-head");if(ph){const p=clamp(y/400);ph.style.setProperty("--phx",(p*30)+"deg");ph.style.setProperty("--phy",(p*-20)+"deg")}
+ requestAnimationFrame(frame)}
+if(!RM)requestAnimationFrame(frame);
+// pointer: hero tilt, card tilt, cursor
+const cur=$("#cur");let cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
+addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY;
+ const st=$("#stack");if(st){st.style.setProperty("--ry",((e.clientX/innerWidth)-.5)*22+"deg");st.style.setProperty("--rx",((e.clientY/innerHeight)-.5)*-16+"deg")}
+ const t=e.target.closest&&e.target.closest(".tier,.step,.card3,.cc .bw,.kpi");$$(".tilting").forEach(x=>{if(x!==t){x.classList.remove("tilting");x.style.transform=""}});
+ if(t&&!RM&&e.pointerType==="mouse"){const r=t.getBoundingClientRect();const px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;t.classList.add("tilting");t.style.transform=`perspective(900px) rotateX(${(.5-py)*10}deg) rotateY(${(px-.5)*12}deg) translateY(-6px)`;t.style.setProperty("--gx",px*100+"%");t.style.setProperty("--gy",py*100+"%");if(!t.querySelector(".glare")){const g=document.createElement("span");g.className="glare";t.appendChild(g)}}
+ if(cur)cur.classList.toggle("big",!!(e.target.closest&&e.target.closest("a,button,.cc,.rb")))},{passive:true});
+document.addEventListener("pointerleave",()=>$$(".tilting").forEach(x=>{x.classList.remove("tilting");x.style.transform=""}));
+(function cloop(){cx+=(tx-cx)*.18;cy+=(ty-cy)*.18;if(cur)cur.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(cloop)})();
 route();
 </script>
 </body>
